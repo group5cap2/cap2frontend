@@ -19,20 +19,25 @@ const Songs = () => {
   };
 
   // artist info
-
-  const info = (name) => {
-    // navigate(`name?artistName=${name}`)
-    console.log(name);
+  const r = [];
+  function info (name)  {
+    // name.split("").join("")
+    // console.log(name);
+    // console.log(name);
+    navigate(`/song/${name}`)
+    // console.log("info function");
+    // console.log(r);
+    // console.log(r);
   };
 
-  const r = [];
+ 
   return (
     <div>
       {songs.map((song) => {
         if (!r.includes(song.artistName)) {
           r.push(song.artistName);
           return (
-            <button onClick={info(song.artistName)}>{song.artistName}</button>
+           <div onClick={() => info(song.artistName)}> <h1 >{song.artistName}</h1> </div>
           );
         }
       })}
