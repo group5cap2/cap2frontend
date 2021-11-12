@@ -1,8 +1,3 @@
-body{
-    background-image: url("bg.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 .contaner{
     display: grid;
     grid-template-columns: 22% 22% 22% 22% ;
@@ -11,10 +6,6 @@ body{
   font-size: 4rem;
 
 }
-
 .card:hover {
-   
     transform: scale(1.1);
-  
 }
-
