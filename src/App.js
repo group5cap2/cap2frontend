@@ -24,7 +24,7 @@ function App() {
       <BrowserRouter>
       <Header />
       <Routes>
-        <Route exact path="/home" element={<Home />} />
+        <Route exact path="/" element={<Home />} />
         <Route exact path="/audiobooks" element={<AudioBooks />} />
         <Route exact path="/ebooks" element={<Ebooks />} />
         <Route exact path="/movies" element={<Movies />} />

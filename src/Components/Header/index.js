@@ -10,7 +10,7 @@ import './style.css';
 const Header = () => {
     return (
         <div>
-           <Link to="/home" ><AiFillHome /></Link>
+           <Link to="/" ><AiFillHome /></Link>
            <Link to="/favorite" ><GrFavorite /></Link>
            <Link to="/account" ><MdManageAccounts /></Link>
             
