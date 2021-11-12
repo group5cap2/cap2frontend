@@ -1,7 +1,31 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import { IoMdLogIn } from "react-icons/io";
+import axios from "axios";
 import "./style.css";
 const Login = () => {
+    const [users,setUsers]=useState([]);
+
+    useEffect(()=>{
+        getUsers();
+    },[]);
+
+    const getUsers= async () => {
+        const user = await axios.get("localhost:5500/users")
+        setUsers(user.data);
+    }
+
+  const handleChange=(e)=>{
+      const{name ,value}=e;
+
+
+
+  }
+
+  const handleSubmit=(e)=>{
+
+  }
+
+
   return (
     <div className="base-container">
       <div className="header">Login</div>
@@ -19,6 +43,7 @@ const Login = () => {
               type="text"
               name="username"
               placeholder="username"
+              onChange={(e) => handleChange(e.target)}
               required
             />
           </div>
@@ -28,12 +53,13 @@ const Login = () => {
               type="passward"
               name="passward"
               placeholder="passward"
+              onChange={(e) => handleChange(e.target.value)}
               required
             />
           </div>
         </div>
         <div className="footer">
-          <button type="button" className="btn">
+          <button type="button" className="btn" onSubmit={handleSubmit}>
             Login
           </button>
         </div>

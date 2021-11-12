@@ -13,7 +13,7 @@ const Header = () => {
            <Link to="/home" ><AiFillHome /></Link>
            <Link to="/favorite" ><GrFavorite /></Link>
            <Link to="/account" ><MdManageAccounts /></Link>
-            
+
         </div>
     )
 }
