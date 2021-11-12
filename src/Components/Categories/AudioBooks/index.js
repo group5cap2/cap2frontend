@@ -1,7 +1,7 @@
 import React from 'react'
 import './style.css';
 
-const index = () => {
+const AudioBooks = () => {
     return (
         <div>
             
@@ -9,4 +9,4 @@ const index = () => {
     )
 }
 
-export default index
+export default AudioBooks

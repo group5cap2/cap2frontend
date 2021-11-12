@@ -1,6 +1,6 @@
 import React from 'react'
 import './style.css';
-const index = () => {
+const Podcast = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const index = () => {
     )
 }
 
-export default index
+export default Podcast
