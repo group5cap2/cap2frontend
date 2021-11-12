@@ -1,5 +1,8 @@
 import React from 'react';
 import { AiFillHome} from 'react-icons/ai';
+import {GrFavorite} from 'react-icons/gr';
+import {MdManageAccounts} from 'react-icons/md'
+
 import { Link } from 'react-router-dom';
 
 // import Logo from '';
@@ -8,8 +11,8 @@ const Header = () => {
     return (
         <div>
            <Link to="/home" ><AiFillHome /></Link>
-           <Link to="/favorite" ><AiFillHome /></Link>
-           <Link to="/account" ><AiFillHome /></Link>
+           <Link to="/favorite" ><GrFavorite /></Link>
+           <Link to="/account" ><MdManageAccounts /></Link>
             
         </div>
     )
