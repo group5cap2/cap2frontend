@@ -1,15 +1,15 @@
 import React from "react";
-import { IoMdLogIn } from "react-icons/io";
+import { GiArchiveRegister } from "react-icons/gi";
+
 import "./style.css";
-const Login = () => {
+const Register = () => {
   return (
     <div className="base-container">
-      <div className="header">Login</div>
+      <div className="header">Register</div>
       <div className="content">
         <div className="image">
           <h3>
-            
-             <IoMdLogIn />
+            <GiArchiveRegister />
           </h3>
         </div>
         <div className="form">
@@ -23,6 +23,10 @@ const Login = () => {
             />
           </div>
           <div className="form-group">
+            <label htmlFor="email">Email</label>
+            <input type="email" name="email" placeholder="email" required />
+          </div>
+          <div className="form-group">
             <label htmlFor="passward">Passward</label>
             <input
               type="passward"
@@ -34,7 +38,7 @@ const Login = () => {
         </div>
         <div className="footer">
           <button type="button" className="btn">
-            Login
+            register
           </button>
         </div>
       </div>
@@ -42,4 +46,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;
