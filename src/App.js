@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Route, Routes } from "react-router";
+import { Route, Routes } from "react-router-dom";
+import {BrowserRouter} from "react-router-dom";
 import Home from "./Components/Home";
 import AudioBooks from "./Components/Categories/AudioBooks";
 import Ebooks from "./Components/Categories/Ebooks";
@@ -18,21 +19,24 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
+      <p> hello</p>
+      <BrowserRouter>
       <Header />
       <Routes>
-        <Route exact path="/home/:id" element={<Home />} />
-        <Route exact path="/audiobooks/:id" element={<AudioBooks />} />
-        <Route exact path="/ebooks/:id" element={<Ebooks />} />
-        <Route exact path="/movies/:id" element={<Movies />} />
-        <Route exact path="/musicVideo/:id" element={<MusicVideo />} />
-        <Route exact path="/podcast/:id" element={<Podcast />} />
-        <Route exact path="/songs/:id" element={<Songs />} />
-        <Route exact path="/tvshow/:id" element={<Tvshow />} />
+        <Route exact path="/home" element={<Home />} />
+        <Route exact path="/audiobooks" element={<AudioBooks />} />
+        <Route exact path="/ebooks" element={<Ebooks />} />
+        <Route exact path="/movies" element={<Movies />} />
+        <Route exact path="/musicVideo" element={<MusicVideo />} />
+        <Route exact path="/podcast" element={<Podcast />} />
+        <Route exact path="/songs" element={<Songs />} />
+        <Route exact path="/tvshow" element={<Tvshow />} />
         {/* <Route exact path="/discription" element={<Discription  />} /> */}
-        <Route path="/account/:id" element={<Account />} />
-        <Route path="/favorite/:id" element={<Favorite />} />
-        <Route path="/user/:id" element={<User />} />
+        <Route path="/account" element={<Account />} />
+        <Route path="/favorite" element={<Favorite />} />
+        <Route path="/user" element={<User />} />
       </Routes>
+      </BrowserRouter>
     </div>
   );
 }
