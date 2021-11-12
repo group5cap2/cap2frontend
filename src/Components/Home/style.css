@@ -24,7 +24,7 @@ body{
 }
 
 .card1{
-    background-image: url("i1.jpg");
+    /* background-image: url("i1.jpg"); */
     background-repeat: no-repeat;
     background-size: cover;
 }
