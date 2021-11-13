@@ -22,7 +22,7 @@ const TvShow = () => {
   const r = [];
   function info (name)  {
    
-    navigate(`/song/${name}`)
+    navigate(`/tvshows/${name}`)
    
   };
 
@@ -30,11 +30,11 @@ const TvShow = () => {
   return (
     <div className="tvShow-container">
       {shows.map((show) => {
-        if (!r.includes(show.trackName)) {
-          r.push(show.trackName);
+        if (!r.includes(show.artistName)) {
+          r.push(show.artistName);
           return (
-           <div onClick={() => info(show.trackName)} className='show'> 
-          <h1 >{show.trackName}</h1> 
+           <div onClick={() => info(show.artistName)} className='show'> 
+          <h1 >{show.artistName}</h1> 
           
            </div>
           );
