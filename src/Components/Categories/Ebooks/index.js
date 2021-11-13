@@ -50,6 +50,8 @@ const Ebooks = () => {
           return (
             <div onClick={() => info(ebook.artistName)} className="books">
               <img src={ebook.artworkUrl100} />
+              <h1>{ebook.artistName}</h1>
+
             </div>
           );
         }

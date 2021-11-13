@@ -18,24 +18,22 @@ const Ebooks = () => {
 
   return (
     <div>
-      {/* <div className="container"> */}
       {ebooks.map((item) => {
         return (
           <div className="container">
             <ul className="songs">
               <li className="song">
+                <img src={item.artworkUrl100} />
                 <h2>{item.artistName} </h2>
                 <h2>{item.trackName} </h2>
                 <h2> {item.collectionCensoredName} </h2>
-                <img src={item.artworkUrl100} />
-                <a href={item.collectionViewUrl}>Music page</a>
+                <a href={item.collectionViewUrl}>Book page</a>
                 <p>{item.releaseDate}</p>
               </li>
             </ul>
           </div>
         );
       })}
-
       <h1>{ebooks.kind}</h1>
       <h1>{ebooks.country}</h1>
       <h1>{ebooks.trackName}</h1>

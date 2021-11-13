@@ -18,34 +18,25 @@ const Song = () => {
 
   return (
     <div>
-      {/* <div className="container"> */}
-        {songs.map((item) => {
-          return (
-            <div className='container'>
-                <ul className='songs'>
-                    <li className="song">
-              <h2>artist :{item.artistName} </h2>
-              <h2>Song :{item.trackName} </h2>
-              <h2>Album : {item.collectionCensoredName} </h2>
-              <img src={item.artworkUrl100} />
-              <a href={item.collectionViewUrl}>Music page</a>
-              <p>{item.releaseDate}</p>
+      {songs.map((item) => {
+        return (
+          <div className="container">
+            <ul className="songs">
+              <li className="song">
+                <img src={item.artworkUrl100} />
+                <h2>artist :{item.artistName} </h2>
+                <h2>Song :{item.trackName} </h2>
+                <h2>Album : {item.collectionCensoredName} </h2>
+                <a href={item.collectionViewUrl}>Music page</a>
+                <p>{item.releaseDate}</p>
               </li>
-              </ul>
-            </div>
-          );
-        })}
-      {/* </div> */}
-      {/* <div>{songs.map((item) => item.trackName)}</div> */}
-
-      {/* <a href={songs.artistViewUrl}>Profile on apple music</a> */}
+            </ul>
+          </div>
+        );
+      })}
       <h1>{songs.kind}</h1>
       <h1>{songs.country}</h1>
       <h1>{songs.trackName}</h1>
-
-      {/* <h1>{songs.map(ele => {
-
-      })}</h1> */}
     </div>
   );
 };

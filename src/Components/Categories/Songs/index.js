@@ -48,7 +48,7 @@ const Songs = () => {
           r.push(song.artistName);
           return (
             <div onClick={() => info(song.artistName)}>
-              {" "}
+              <img src={song.artworkUrl100} />
               <h1>{song.artistName}</h1>{" "}
             </div>
           );

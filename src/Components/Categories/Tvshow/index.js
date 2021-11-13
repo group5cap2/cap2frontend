@@ -47,6 +47,7 @@ const TvShow = () => {
           r.push(show.artistName);
           return (
             <div onClick={() => info(show.artistName)} className="show">
+              <img src={show.artworkUrl100} />
               <h1>{show.artistName}</h1>
             </div>
           );
