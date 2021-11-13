@@ -17,10 +17,10 @@ const Ebooks = () => {
   }, []);
 
   return (
-    <div>
+    <div className="container">
       {ebooks.map((item) => {
         return (
-          <div className="container">
+          <div className="sid-container">
             <ul className="songs">
               <li className="song">
                 <img src={item.artworkUrl100} />

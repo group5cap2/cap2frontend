@@ -34,7 +34,21 @@ const Login = () => {
     getAllusers();
   }, []);
 
-  
+
+  // const loginuser = () => {
+  //   users.map((user) => {
+  //     if (user.username === username && user.passward === passward) {
+  //       setResult(true);
+  //     }
+  //   });
+  //   if (result) {
+  //     navigate(`/`);
+  //   } else if (!result) {
+  //     let myWindow = window.open("", "", "width=200,height=100");
+  //     myWindow.document.write("<p>wrong username/passward compination</p>");
+  //     myWindow.focus();
+  //   }
+  // };
 
   return (
     <div className="all">

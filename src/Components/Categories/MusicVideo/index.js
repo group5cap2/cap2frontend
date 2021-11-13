@@ -34,7 +34,8 @@ const MusicVideo = () => {
     }
   };
   return (
-    <div className="music-container">
+    <div className="container">
+      <h1>Music Video</h1>
       <input
         onKeyDown={getSearched}
         autoFocus

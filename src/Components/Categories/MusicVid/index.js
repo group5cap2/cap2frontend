@@ -20,10 +20,10 @@ const MusicVid = () => {
   }, []);
 
   return (
-    <div>
+    <div className="container">
       {musicVid.map((item) => {
         return (
-          <div className="container">
+          <div className="musicVid">
             <ul className="songs">
               <li className="song">
                 <img src={item.artworkUrl100} />

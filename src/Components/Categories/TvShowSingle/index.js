@@ -16,10 +16,10 @@ const TvShowSingle = () => {
   }, []);
 
   return (
-    <div>
+    <div className="container">
       {tvShowSingle.map((item) => {
         return (
-          <div className="container">
+          <div className="tvshow">
             <ul className="songs">
               <li className="song">
                 <img src={item.artworkUrl100} />

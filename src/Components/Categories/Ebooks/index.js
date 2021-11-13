@@ -36,7 +36,8 @@ const Ebooks = () => {
   };
 
   return (
-    <div className="books-container">
+    <div className="container">
+      <h1>Ebooks</h1>
       <input
         onKeyDown={getSearched}
         autoFocus

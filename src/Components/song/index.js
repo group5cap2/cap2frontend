@@ -17,10 +17,10 @@ const Song = () => {
   }, []);
 
   return (
-    <div>
+    <div className="container">
       {songs.map((item) => {
         return (
-          <div className="container">
+          <div>
             <ul className="songs">
               <li className="song">
                 <img src={item.artworkUrl100} />

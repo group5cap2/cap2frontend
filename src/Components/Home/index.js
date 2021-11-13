@@ -15,7 +15,6 @@ const Home = () => {
   return (
 
     <div className="home-container">
-
       <Link to="songs" className="card">
 
         <GiMusicSpell />

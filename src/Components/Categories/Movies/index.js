@@ -34,7 +34,8 @@ const Movies = () => {
     }
   };
   return (
-    <div>
+    <div className="container">
+      <h1>Movies</h1>
       <input
         onKeyDown={getSearched}
         autoFocus
@@ -47,8 +48,8 @@ const Movies = () => {
           r.push(movie.trackName);
           return (
             <div onClick={() => info(movie.trackName)}>
-              <h1>{movie.trackName}</h1>
               <img src={movie.artworkUrl100} />
+              <h1>{movie.trackName}</h1>
             </div>
           );
         }

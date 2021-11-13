@@ -9,10 +9,11 @@ import { Link } from 'react-router-dom';
 import './style.css';
 const Header = () => {
     return (
-        <div>
-           <Link to="/" ><AiFillHome /></Link>
-           <Link to="/favorite" ><GrFavorite /></Link>
-           <Link to="/account" ><MdManageAccounts /></Link>
+        <div className="header">
+            
+           <Link to="/" className="icon"><AiFillHome /></Link>
+           <Link to="/favorite" className="icon"><GrFavorite /></Link>
+           <Link to="/account" className="icon"><MdManageAccounts /></Link>
 
         </div>
     )
