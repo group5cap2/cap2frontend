@@ -12,10 +12,10 @@ import Tvshow from "./Components/Categories/Tvshow";
 import Favorite from "./Components/Favorite";
 import Header from "./Components/Header";
 import Account from "./Components/Account";
+
 import Song from "./Components/song";
 import Login from "./Components/User/Login";
 import Register from "./Components/User/Register";
-
 
 import "./App.css";
 
@@ -23,7 +23,6 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-
         <Header />
         <Routes>
           <Route exact path="/" element={<Home />} />
@@ -36,11 +35,11 @@ function App() {
           <Route exact path="/tvshow" element={<Tvshow />} />
           <Route exact path="/song/:artistName" element={<Song />} />
           <Route path="/account" element={<Account />} />
-          <Route path="/favorite" element={<Favorite />} /> 
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-      </Routes>
-
+          <Route path="/favorite" element={<Favorite />} />
+        
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+        </Routes>
       </BrowserRouter>
     </div>
   );
