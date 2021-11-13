@@ -1,52 +1,78 @@
 import React from "react";
+// eslint-disable-next-line
 import axios from "axios";
-import { Router, Link } from "react-router-dom";
+import {useNavigate ,useParams} from "react-router-dom";
 import { GiMusicSpell, GiBlackBook } from "react-icons/gi";
 import { IoTvSharp, IoBookSharp } from "react-icons/io5";
 import { MdMusicVideo, MdOutlinePodcasts, MdOutlineMovieCreation } from "react-icons/md";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 
 
 import "./style.css";
 
 const Home = () => {
+  // eslint-disable-next-line
+  const [id,setId]=useState(useParams().id)
+  const navigate = useNavigate();
+
+  const songs=()=>{
+    navigate(`/songs/${id}`);
+  }
+  const ebooks=()=>{
+    navigate(`/ebooks/${id}`);
+  }
+  const movies=()=>{
+    navigate(`/movies/${id}`);
+  }
+  const podcast=()=>{
+    navigate(`/podcast/${id}`);
+  }
+  const audiobooks=()=>{
+    navigate(`/audiobooks/${id}`);
+  }
+  const tvshow=()=>{
+    navigate(`/tvshow/${id}`);
+  }
+  const musicVideo=()=>{
+    navigate(`/musicVideo/${id}`);
+  }
  
   return (
 
     <div className="home-container">
-      <Link to="songs" className="card">
+      <div onClick={songs} className="card">
 
         <GiMusicSpell />
         <h5>Songs</h5>
-      </Link>
+      </div>
       
-      <Link to="ebooks" className="card">
+      <div onClick={ebooks} className="card">
         <GiBlackBook />
         <h5>Ebooks</h5>
-      </Link>
+      </div>
       
-      <Link to="movies" className="card">
+      <div onClick={movies} className="card">
         <MdOutlineMovieCreation />
         <h5>Movies</h5>
-      </Link>
+      </div>
       
-      <Link to="podcast" className="card">
+      <div onClick={podcast} className="card">
         <MdOutlinePodcasts />
         <h5>Podcast</h5>
-      </Link>
-      <Link to="audiobooks" className="card">
+      </div>
+      <div onClick={audiobooks} className="card">
         <IoBookSharp />
         <h5>Audiobooks</h5>
-      </Link>
-      <Link to="tvshow" className="card">
+      </div>
+      <div onClick={tvshow} className="card">
         <IoTvSharp />
         <h5>Tvshow</h5>
-      </Link>
-      <Link to="musicVideo" className="card">
+      </div>
+      <div onClick={musicVideo} className="card">
         <MdMusicVideo />
         <h5>MusicVideo</h5>
-      </Link>
+      </div>
       
     
     </div>

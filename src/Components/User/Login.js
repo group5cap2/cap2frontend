@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { IoMdLogIn } from "react-icons/io";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import "./style.css";
 const Login = () => {
   const [users, setUsers] = useState([]);
   const [username, setUserame] = useState("");
   const [passward, setPassward] = useState("");
+ 
   const navigate = useNavigate();
 
 
@@ -17,13 +18,15 @@ const Login = () => {
 
   const loginuser = () => {
     let x=0;
+    // eslint-disable-next-line
     users.map((user) => {
+      // eslint-disable-next-line
       if (user.username == username && user.passward == passward) {
         x=1;
       }
     });
     if (x===1) {
-      navigate(`/`);
+      navigate(`/${username}`);
     } else if (x===0) {
       let myWindow = window.open("", "", "width=200,height=100");
       myWindow.document.write("<p>wrong username/passward compination</p>");
@@ -35,20 +38,6 @@ const Login = () => {
   }, []);
 
 
-  // const loginuser = () => {
-  //   users.map((user) => {
-  //     if (user.username === username && user.passward === passward) {
-  //       setResult(true);
-  //     }
-  //   });
-  //   if (result) {
-  //     navigate(`/`);
-  //   } else if (!result) {
-  //     let myWindow = window.open("", "", "width=200,height=100");
-  //     myWindow.document.write("<p>wrong username/passward compination</p>");
-  //     myWindow.focus();
-  //   }
-  // };
 
   return (
     <div className="all">

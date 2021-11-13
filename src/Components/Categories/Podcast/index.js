@@ -1,11 +1,12 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,useParams } from "react-router-dom";
 import axios from "axios";
 import "./style.css";
 const Podcast = () => {
   const navigate = useNavigate();
   const [podcasts, setPodcast] = useState([]);
+  const[id,setId]=useState(useParams().id)
 
   useEffect(() => {
     getData();
@@ -21,7 +22,7 @@ const Podcast = () => {
   // artist info
   const r = [];
   function info(name) {
-    navigate(`/podcast/${name}`);
+    navigate(`/podcast/${name}/${id}`);
   }
 
   const getSearched = async (e) => {

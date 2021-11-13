@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import {useNavigate} from 'react-router-dom'
+import {useNavigate,useParams} from 'react-router-dom'
 // import e from "cors";
 import { GiArchiveRegister } from "react-icons/gi";
 
@@ -8,6 +8,8 @@ import "./style.css";
 
 const Register = () => {
   const [users, setUsers] = useState([]);
+  // eslint-disable-next-line
+  const [id,setId]=useState(useParams().id)
 
   const [username, setUserame] = useState("");
   const [email, setEmail] = useState("");
@@ -23,17 +25,20 @@ const Register = () => {
   const postuser =()=>{
    
     let x=0;
+    // eslint-disable-next-line
     users.map(item=>{
+      // eslint-disable-next-line
       if(item.username==username)
       {
         x=1;
         
-    
+    // eslint-disable-next-line
       }else if(item.email==email){
         x=1;
       }
     })
-    if(x===1)
+    // eslint-disable-next-line
+    if(x==1)
     {
       let myWindow = window.open("", "", "width=200,height=100");
         myWindow.document.write("<p> username/email existing</p>");
@@ -44,7 +49,7 @@ const Register = () => {
     
     {
       axios.post("http://localhost:5500/users", {username:username,email:email,passward:passward})
-      navigate(`/login`);
+      navigate(`/login/${id}`);
       
     }
     

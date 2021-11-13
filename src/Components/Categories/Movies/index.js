@@ -1,11 +1,12 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,useParams } from "react-router-dom";
 import axios from "axios";
 import "./style.css";
 const Movies = () => {
   const navigate = useNavigate();
   const [movies, setMovies] = useState([]);
+  const[id,setId]=useState(useParams().id)
 
   useEffect(() => {
     getData();
@@ -21,7 +22,7 @@ const Movies = () => {
   // movies info
   const r = [];
   function info(name) {
-    navigate(`/movies/${name}`);
+    navigate(`/movies/${name}/${id}`);
   }
 
   const getSearched = async (e) => {

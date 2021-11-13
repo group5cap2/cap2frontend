@@ -6,15 +6,24 @@ import "./style.css";
 const Song = () => {
   let artistName = useParams().artistName;
   const [songs, setSongs] = useState([]);
+  // eslint-disable-next-line
+  const[id,setId]=useState(useParams().id)
 
   const getData = async () => {
     const item = await axios.get("http://localhost:5500/songs");
+    // eslint-disable-next-line
     setSongs(item.data.filter((item) => artistName == item.artistName));
   };
   console.log(songs);
   useEffect(() => {
     getData();
-  }, []);
+  });
+
+  const favorite=()=>{
+    if(id!==0){
+      axios.post("http://localhost:5500/users/favorite", {username:id,favorite:songs})
+    }
+  }
 
   return (
     <div className="container">
@@ -22,8 +31,10 @@ const Song = () => {
         return (
           <div>
             <ul className="songs">
+        
               <li className="song">
-                <img src={item.artworkUrl100} />
+           
+                <img src={item.artworkUrl100} alt="img" />
                 <h2>artist :{item.artistName} </h2>
                 <h2>Song :{item.trackName} </h2>
                 <h2>Album : {item.collectionCensoredName} </h2>
@@ -37,6 +48,7 @@ const Song = () => {
       <h1>{songs.kind}</h1>
       <h1>{songs.country}</h1>
       <h1>{songs.trackName}</h1>
+      <button onClick={favorite}>like</button>
     </div>
   );
 };

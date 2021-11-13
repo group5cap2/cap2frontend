@@ -8,6 +8,8 @@ import "./style.css";
 const Audiobook = () => {
   let artistName = useParams().artistName;
   const [audiobook, setAudiobook] = useState([]);
+  const[id,setId]=useState(useParams().id)
+  
 
   const getData = async () => {
     const item = await axios.get("http://localhost:5500/audiobooks");
@@ -18,6 +20,12 @@ const Audiobook = () => {
   useEffect(() => {
     getData();
   }, []);
+
+  const favorite=()=>{
+    if(id!=0){
+      axios.post("http://localhost:5500/users/favorite", {username:id,favorite:audiobook})
+    }
+  }
 
   return (
     <div className="container">
@@ -41,6 +49,7 @@ const Audiobook = () => {
       <h1>{audiobook.kind}</h1>
       <h1>{audiobook.country}</h1>
       <h1>{audiobook.trackName}</h1>
+      <button onClick={favorite}>like</button>
     </div>
   );
 };

@@ -6,6 +6,8 @@ import "./style.css";
 const PodCastSingle = () => {
   let trackName = useParams().trackName;
   const [podCastSingle, setPodCastSingle] = useState([]);
+  const[id,setId]=useState(useParams().id)
+
 
   const getData = async () => {
     const item = await axios.get("http://localhost:5500/podcasts");
@@ -15,6 +17,12 @@ const PodCastSingle = () => {
   useEffect(() => {
     getData();
   }, []);
+
+  const favorite=()=>{
+    if(id!=0){
+      axios.post("http://localhost:5500/users/favorite", {username:id,favorite:podCastSingle})
+    }
+  }
 
   return (
     <div className="container">
@@ -38,6 +46,7 @@ const PodCastSingle = () => {
       <h1>{podCastSingle.kind}</h1>
       <h1>{podCastSingle.country}</h1>
       <h1>{podCastSingle.trackName}</h1>
+      <button onClick={favorite}>like</button>
     </div>
   );
 };
