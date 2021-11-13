@@ -1,12 +1,12 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,useParams } from "react-router-dom";
 import axios from "axios";
 import "./style.css";
 const MusicVideo = () => {
   const navigate = useNavigate();
   const [musicVid, setMusicVid] = useState([]);
-
+  const[id,setId]=useState(useParams().id)
   useEffect(() => {
     getData();
   }, []);
@@ -21,7 +21,7 @@ const MusicVideo = () => {
   // artist info
   const r = [];
   function info(trackName) {
-    navigate(`/musicVideo/${trackName}`);
+    navigate(`/musicVideo/${trackName}/${id}`);
   }
 
   const getSearched = async (e) => {

@@ -1,12 +1,13 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,useParams } from "react-router-dom";
 import axios from "axios";
 import "./style.css";
 
 const AudioBooks = () => {
   const navigate = useNavigate();
   const [audios, setAudios] = useState([]);
+  const[id,setId]=useState(useParams().id)
 
   useEffect(() => {
     getData();
@@ -22,7 +23,7 @@ const AudioBooks = () => {
   // artist info
   const r = [];
   function info(name) {
-    navigate(`/audiobooks/${name}`);
+    navigate(`/audiobooks/${name}/${id}`);
   }
 
   const getSearched = async (e) => {

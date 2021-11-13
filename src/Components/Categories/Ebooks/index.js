@@ -1,12 +1,13 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,useParams } from "react-router-dom";
 import axios from "axios";
 import "./style.css";
 
 const Ebooks = () => {
   const navigate = useNavigate();
   const [ebooks, setEbooks] = useState([]);
+  const[id,setId]=useState(useParams().id)
 
   useEffect(() => {
     getData();
@@ -22,7 +23,7 @@ const Ebooks = () => {
   // artist info
   const r = [];
   function info(name) {
-    navigate(`/ebooks/${name}`);
+    navigate(`/ebooks/${name}/${id}`);
   }
 
   const getSearched = async (e) => {

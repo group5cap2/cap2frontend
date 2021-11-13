@@ -6,6 +6,7 @@ import "./style.css";
 const Ebooks = () => {
   let artistName = useParams().artistName;
   const [ebooks, setEbooks] = useState([]);
+  const[id,setId]=useState(useParams().id)
 
   const getData = async () => {
     const item = await axios.get("http://localhost:5500/ebooks");
@@ -15,6 +16,12 @@ const Ebooks = () => {
   useEffect(() => {
     getData();
   }, []);
+
+  const favorite=()=>{
+    if(id!=0){
+      axios.post("http://localhost:5500/users/favorite", {username:id,favorite:ebooks})
+    }
+  }
 
   return (
     <div className="container">
@@ -37,6 +44,7 @@ const Ebooks = () => {
       <h1>{ebooks.kind}</h1>
       <h1>{ebooks.country}</h1>
       <h1>{ebooks.trackName}</h1>
+      <button onClick={favorite}>like</button>
     </div>
   );
 };

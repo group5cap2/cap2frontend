@@ -7,6 +7,7 @@ const MusicVid = () => {
   let trackName = useParams().trackName;
   //   console.log("artistName == "+artistName);
   const [musicVid, setMusicVid] = useState([]);
+  const[id,setId]=useState(useParams().id)
 
   const getData = async () => {
     const item = await axios.get("http://localhost:5500/musicVideo");
@@ -18,6 +19,12 @@ const MusicVid = () => {
   useEffect(() => {
     getData();
   }, []);
+
+  const favorite=()=>{
+    if(id!=0){
+      axios.post("http://localhost:5500/users/favorite", {username:id,favorite:musicVid})
+    }
+  }
 
   return (
     <div className="container">
@@ -40,6 +47,7 @@ const MusicVid = () => {
       <h1>{musicVid.kind}</h1>
       <h1>{musicVid.country}</h1>
       <h1>{musicVid.trackName}</h1>
+      <button onClick={favorite}>like</button>
     </div>
   );
 };

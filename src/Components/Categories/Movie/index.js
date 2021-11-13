@@ -6,6 +6,7 @@ import "./style.css";
 const Movie = () => {
   let trackName = useParams().trackName;
   const [movie, setMovie] = useState([]);
+  const[id,setId]=useState(useParams().id)
 
   const getData = async () => {
     const item = await axios.get("http://localhost:5500/movies");
@@ -17,6 +18,12 @@ const Movie = () => {
   useEffect(() => {
     getData();
   }, []);
+
+  const favorite=()=>{
+    if(id!=0){
+      axios.post("http://localhost:5500/users/favorite", {username:id,favorite:movie})
+    }
+  }
 
   return (
     <div className="container">
@@ -39,6 +46,7 @@ const Movie = () => {
       <h1>{movie.kind}</h1>
       <h1>{movie.country}</h1>
       <h1>{movie.trackName}</h1>
+      <button onClick={favorite}>like</button>
     </div>
   );
 };

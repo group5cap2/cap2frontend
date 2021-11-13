@@ -1,19 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { MdOutlineSupervisorAccount } from "react-icons/md";
 
-import {useNavigate} from 'react-router-dom'
+import {useNavigate,useParams} from 'react-router-dom'
 import Login from "../User/Login";
 import Register from "../User/Register";
 import "./style.css";
 const Account = () => {
     const navigate = useNavigate();
+    const[id,setId]=useState(useParams().id)
 
     const changeRoutedis=(x)=>{
         if(x==="log"){
-            navigate(`/login`);
+            navigate(`/login/${id}`);
         }
         else{
-            navigate(`/register`);
+            navigate(`/register/${id}`);
         }
         
     }

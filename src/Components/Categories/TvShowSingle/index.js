@@ -6,6 +6,7 @@ import "./style.css";
 const TvShowSingle = () => {
   let artistName = useParams().artistName;
   const [tvShowSingle, setTvShowSingle] = useState([]);
+  const[id,setId]=useState(useParams().id)
 
   const getData = async () => {
     const item = await axios.get("http://localhost:5500/tvshows");
@@ -14,6 +15,12 @@ const TvShowSingle = () => {
   useEffect(() => {
     getData();
   }, []);
+
+  const favorite=()=>{
+    if(id!=0){
+      axios.post("http://localhost:5500/users/favorite", {username:id,favorite:tvShowSingle})
+    }
+  }
 
   return (
     <div className="container">
@@ -36,6 +43,7 @@ const TvShowSingle = () => {
       <h1>{tvShowSingle.kind}</h1>
       <h1>{tvShowSingle.country}</h1>
       <h1>{tvShowSingle.trackName}</h1>
+      <button onClick={favorite}>like</button>
     </div>
   );
 };
