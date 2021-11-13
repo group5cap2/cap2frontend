@@ -6,12 +6,18 @@ import { IoTvSharp, IoBookSharp } from "react-icons/io5";
 import { MdMusicVideo, MdOutlinePodcasts, MdOutlineMovieCreation } from "react-icons/md";
 import { useState, useEffect } from "react";
 
+
+
 import "./style.css";
 
 const Home = () => {
+ 
   return (
     <div className="contaner">
+
+
       <Link to="songs" className="card">
+
         <GiMusicSpell />
         <h5>Songs</h5>
       </Link>
