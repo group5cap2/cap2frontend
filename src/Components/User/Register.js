@@ -8,51 +8,54 @@ import "./style.css";
 
 const Register = () => {
   const [users, setUsers] = useState([]);
-  const [newUser, setNewUser] = useState();
-  const [name, setName] = useState("");
+
+  const [username, setUserame] = useState("");
   const [email, setEmail] = useState("");
   const [passward, setPassward] = useState("");
   const navigate = useNavigate();
-
-  useEffect(() => {
-    getAllusers();
-  }, []);
 
   const getAllusers = async () => {
     const user = await axios.get("http://localhost:5500/users");
     setUsers(user.data);
   };
 
+  useEffect(() => {
+    getAllusers();
+  }, []);
+
+  
+
   const postuser =()=>{
-    axios.post("http://localhost:5500/users", {newUser})
+    axios.post("http://localhost:5500/users", {username:username,email:email,passward:passward})
+    navigate(`/login`);
       }
   
 
-  const handelname = (e) => {
-    const { value } = e.target;
+  // const handelname = (e) => {
+  //   const { value } = e.target;
 
-    setName(value);
-  };
-  const handelemail = (e) => {
-    const { value } = e.target;
+  //   setName(value);
+  // };
+  // const handelemail = (e) => {
+  //   const { value } = e.target;
 
-    setEmail(value);
-  };
-  const handelpassward = (e) => {
-    const { value } = e.target;
+  //   setEmail(value);
+  // };
+  // const handelpassward = (e) => {
+  //   const { value } = e.target;
 
-    setPassward(value);
-  };
+  //   setPassward(value);
+  // };
 
-  const handelSubmit = (e) => {
-    setNewUser({ username: name, email: email, passward: passward  });
+  // const handelSubmit = (e) => {
+  //   setNewUser({ username: name, email: email, passward: passward  });
     
-    // e.preventDefault();
-    console.log(newUser);
+  //   // e.preventDefault();
+  //   console.log(newUser);
 
-    // postuser();
-    // navigate(`/login`);
-  };
+  //   // postuser();
+  //   // 
+  // };
 
   
 
@@ -72,7 +75,7 @@ const Register = () => {
               type="text"
               name="username"
               placeholder="username"
-              onChange={(e) => handelname(e)}
+              onChange={(e) => setUserame(e.target.value)}
               required
             />
           </div>
@@ -82,7 +85,7 @@ const Register = () => {
               type="email"
               name="email"
               placeholder="email"
-              onChange={(e) => handelemail(e)}
+              onChange={(e) => setEmail(e.target.value)}
               required
             />
           </div>
@@ -92,13 +95,13 @@ const Register = () => {
               type="passward"
               name="passward"
               placeholder="passward"
-              onChange={(e) => handelpassward(e)}
+              onChange={(e) => setPassward(e.target.value)}
               required
             />
           </div>
         </div>
         <div className="footer">
-          <button type="button" className="btn" onClick={(e) => handelSubmit(e)}>
+          <button type="button" className="btn" onClick={postuser}>
             register
           </button>
         </div>

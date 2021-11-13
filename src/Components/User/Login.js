@@ -5,9 +5,9 @@ import {useNavigate} from 'react-router-dom'
 import "./style.css";
 const Login = () => {
     const [users, setUsers] = useState([]);
-    const [loginuser, setLoginuser] = useState();
-    const [name, setName] = useState("");
+    const [username, setUserame] = useState("");
     const [passward, setPassward] = useState("");
+    const [result, setResult] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -18,44 +18,30 @@ const Login = () => {
         const user = await axios.get("http://localhost:5500/users");
         setUsers(user.data);
       };
-
-      const handelname = (e) => {
-        const { value } = e.target;
-  
-        users.map(item=>{
-            if(item.username===value)
-            {
-                setName(value);
-            }else{
-                e.target.value="";
-            }
-        })
-        
-      };
-
-      const handelpassward = (e) => {
-        const { value } = e.target;
-  
-        users.map(item=>{
-            if(item.username===name&&item.passward===value)
-            {
-                setPassward(value);
-            }else{
-                e.target.value="";
-            }
-        })
-      };
-
-
-      const handelSubmit = (e) => {
-          
-        
-        e.preventDefault();
-        navigate(`/`);
       
+
+      const loginuser =()=>{
+ 
        
-      };
-    
+            users.map(user=>{
+                
+                if(user.username===username&&user.passward===passward){
+                    setResult(true);
+                    
+                }
+            })
+            if(result)
+            {
+                navigate(`/`); 
+            }else if(!result){
+               
+                let myWindow = window.open("", "", "width=200,height=100");
+                myWindow.document.write("<p>wrong username/passward compination</p>");
+                myWindow.focus();
+            }
+            
+          }
+
 
   return (
     <div className="base-container">
@@ -74,7 +60,7 @@ const Login = () => {
               type="text"
               name="username"
               placeholder="username"
-              onChange={(e) => handelname(e)}
+              onChange={(e) => setUserame(e.target.value)}
               required
             />
           </div>
@@ -84,13 +70,13 @@ const Login = () => {
               type="passward"
               name="passward"
               placeholder="passward"
-              onChange={(e) => handelpassward(e)}
+              onChange={(e) => setPassward(e.target.value)}
               required
             />
           </div>
         </div>
         <div className="footer">
-          <button type="button" className="btn" onClick={(e) => handelSubmit(e)}>
+          <button type="button" className="btn" onClick={loginuser}>
             Login
           </button>
         </div>
