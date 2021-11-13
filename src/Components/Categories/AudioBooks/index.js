@@ -23,7 +23,7 @@ const AudioBooks = () => {
     const r = [];
     function info (name)  {
      
-      navigate(`/song/${name}`)
+      navigate(`/audiobooks/${name}`)
      
     };
   

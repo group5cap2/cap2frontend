@@ -22,7 +22,7 @@ const Movies = () => {
     const r = [];
     function info (name)  {
      
-      navigate(`/song/${name}`)
+      navigate(`/movies/${name}`)
      
     };
   

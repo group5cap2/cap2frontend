@@ -22,7 +22,7 @@ const Podcast = () => {
   const r = [];
   function info (name)  {
    
-    navigate(`/song/${name}`)
+    navigate(`/podcast/${name}`)
    
   };
 

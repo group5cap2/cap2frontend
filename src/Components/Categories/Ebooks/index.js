@@ -23,7 +23,7 @@ const Ebooks = () => {
     const r = [];
     function info (name)  {
      
-      navigate(`/song/${name}`)
+      navigate(`/ebooks/${name}`)
      
     };
   
