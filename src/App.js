@@ -13,9 +13,7 @@ import Favorite from "./Components/Favorite";
 import Header from "./Components/Header";
 import Account from "./Components/Account";
 
-
 import Song from "./Components/song";
-
 import Login from "./Components/User/Login";
 import Register from "./Components/User/Register";
 
@@ -39,7 +37,6 @@ function App() {
           <Route path="/account" element={<Account />} />
           <Route path="/favorite" element={<Favorite />} />
         
-
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
         </Routes>
