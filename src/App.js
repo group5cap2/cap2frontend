@@ -12,10 +12,7 @@ import Tvshow from "./Components/Categories/Tvshow";
 import Favorite from "./Components/Favorite";
 import Header from "./Components/Header";
 import Account from "./Components/Account";
-
-import User from "./Components/User/Account";
 import Song from "./Components/song";
-
 import Login from "./Components/User/Login";
 import Register from "./Components/User/Register";
 
@@ -39,11 +36,7 @@ function App() {
           <Route exact path="/tvshow" element={<Tvshow />} />
           <Route exact path="/song/:artistName" element={<Song />} />
           <Route path="/account" element={<Account />} />
-          <Route path="/favorite" element={<Favorite />} />
-          <Route path="/user" element={<User />} />
-       
-
-     
+          <Route path="/favorite" element={<Favorite />} /> 
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Routes>

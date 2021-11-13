@@ -1,29 +1,48 @@
 import React,{useState,useEffect} from "react";
 import { IoMdLogIn } from "react-icons/io";
 import axios from "axios";
+
+import {useNavigate} from 'react-router-dom'
 import "./style.css";
 const Login = () => {
-    const [users,setUsers]=useState([]);
+    const [users, setUsers] = useState([]);
+    const [username, setUserame] = useState("");
+    const [passward, setPassward] = useState("");
+    const [result, setResult] = useState(false);
+    const navigate = useNavigate();
 
-    useEffect(()=>{
-        getUsers();
-    },[]);
-
-    const getUsers= async () => {
-        const user = await axios.get("localhost:5500/users")
+    useEffect(() => {
+        getAllusers();
+      }, []);
+    
+      const getAllusers = async () => {
+        const user = await axios.get("http://localhost:5500/users");
         setUsers(user.data);
-    }
+      };
+      
 
-  const handleChange=(e)=>{
-      const{name ,value}=e;
+      const loginuser =()=>{
+ 
+       
+            users.map(user=>{
+                
+                if(user.username===username&&user.passward===passward){
+                    setResult(true);
+                    
+                }
+            })
+            if(result)
+            {
+                navigate(`/`); 
+            }else if(!result){
+               
+                let myWindow = window.open("", "", "width=200,height=100");
+                myWindow.document.write("<p>wrong username/passward compination</p>");
+                myWindow.focus();
+            }
+            
+          }
 
-
-
-  }
-
-  const handleSubmit=(e)=>{
-
-  }
 
 
   return (
@@ -43,7 +62,8 @@ const Login = () => {
               type="text"
               name="username"
               placeholder="username"
-              onChange={(e) => handleChange(e.target)}
+
+              onChange={(e) => setUserame(e.target.value)}
               required
             />
           </div>
@@ -53,13 +73,15 @@ const Login = () => {
               type="passward"
               name="passward"
               placeholder="passward"
-              onChange={(e) => handleChange(e.target.value)}
+
+              onChange={(e) => setPassward(e.target.value)}
               required
             />
           </div>
         </div>
         <div className="footer">
-          <button type="button" className="btn" onSubmit={handleSubmit}>
+
+          <button type="button" className="btn" onClick={loginuser}>
             Login
           </button>
         </div>
