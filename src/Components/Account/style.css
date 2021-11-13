@@ -1,2 +1,33 @@
 
+.logo{
+    font-size: 300px;
+}
+.count{
+    width: 100%;
+    height: 100vh;
+    background-color: teal;
+    padding-top: 50px;
+}
+.main{
+    background-color: whitesmoke;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    margin: auto;
+    box-shadow: 21px 31px 9px -7px rgba(223,229,232,0.69);
+   
+
+}
+.reg h1{
+    transition: all 250ms ease-in-out;
+    cursor: pointer;
+}
+.reg h1:hover{
+   color: #095a91;
+
+}
+.reg h1:focus{
+    outline: none;
+}
+
 
