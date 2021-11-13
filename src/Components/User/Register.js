@@ -60,13 +60,14 @@ const Register = () => {
   
 
   return (
-    <div className="base-container">
+    <div className="all">
+    <div className="base-containerr">
       <div className="header">Register</div>
-      <div className="content">
+      <div className="contentr">
         <div className="image">
-          <h3>
-            <GiArchiveRegister />
-          </h3>
+          
+            <GiArchiveRegister className="img"/>
+          
         </div>
         <div className="form">
           <div className="form-group">
@@ -106,6 +107,7 @@ const Register = () => {
           </button>
         </div>
       </div>
+    </div>
     </div>
   );
 };

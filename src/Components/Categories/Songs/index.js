@@ -35,7 +35,8 @@ const Songs = () => {
   };
 
   return (
-    <div>
+
+    <div className="songs-container">
       <input
         onKeyDown={getSearched}
         autoFocus
@@ -43,14 +44,19 @@ const Songs = () => {
         placeholder="search"
         type="text"
       />
+
+
       {songs.map((song) => {
         if (!r.includes(song.artistName)) {
           r.push(song.artistName);
           return (
+
             <div onClick={() => info(song.artistName)}>
               {" "}
               <h1>{song.artistName}</h1>{" "}
             </div>
+
+           
           );
         }
       })}

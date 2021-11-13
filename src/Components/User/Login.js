@@ -36,9 +36,10 @@ const Login = () => {
   };
 
   return (
-    <div className="base-container">
+    <div className="all">
+    <div className="base-containerl">
       <div className="header">Login</div>
-      <div className="content">
+      <div className="contentl">
         <div className="image">
           <h3>
             <IoMdLogIn />
@@ -72,6 +73,7 @@ const Login = () => {
           </button>
         </div>
       </div>
+    </div>
     </div>
   );
 };
