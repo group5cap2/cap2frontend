@@ -10,6 +10,7 @@ const Login = () => {
   const [result, setResult] = useState(false);
   const navigate = useNavigate();
 
+
   const getAllusers = async () => {
     const user = await axios.get("http://localhost:5500/users");
     setUsers(user.data);
@@ -33,6 +34,20 @@ const Login = () => {
     getAllusers();
   }, []);
 
+  const loginuser = () => {
+    users.map((user) => {
+      if (user.username === username && user.passward === passward) {
+        setResult(true);
+      }
+    });
+    if (result) {
+      navigate(`/`);
+    } else if (!result) {
+      let myWindow = window.open("", "", "width=200,height=100");
+      myWindow.document.write("<p>wrong username/passward compination</p>");
+      myWindow.focus();
+    }
+  };
 
   return (
     <div className="all">
@@ -41,6 +56,7 @@ const Login = () => {
         <div className="contentl">
           <div className="image">
             <IoMdLogIn className="img" />
+
           </div>
           <div className="form">
             <div className="form-group">

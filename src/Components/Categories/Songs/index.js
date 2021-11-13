@@ -20,24 +20,43 @@ const Songs = () => {
 
   // artist info
   const r = [];
-  function info (name)  {
-    // name.split("").join("")
-    // console.log(name);
-    // console.log(name);
-    navigate(`/song/${name}`)
-    // console.log("info function");
-    // console.log(r);
-    // console.log(r);
+  function info(name) {
+    navigate(`/song/${name}`);
+  }
+
+  const getSearched = async (e) => {
+    if (e.key === "Enter") {
+      let myTerm = e.target.value;
+      const response = await axios.get(
+        `http://localhost:5500/movies/search/${myTerm}`
+      );
+      setSongs(response.data.results);
+    }
   };
 
- 
   return (
-    <div>
+
+    <div className="songs-container">
+      <input
+        onKeyDown={getSearched}
+        autoFocus
+        id="search"
+        placeholder="search"
+        type="text"
+      />
+
+
       {songs.map((song) => {
         if (!r.includes(song.artistName)) {
           r.push(song.artistName);
           return (
-           <div onClick={() => info(song.artistName)}> <h1 >{song.artistName}</h1> </div>
+
+            <div onClick={() => info(song.artistName)}>
+              {" "}
+              <h1>{song.artistName}</h1>{" "}
+            </div>
+
+           
           );
         }
       })}
