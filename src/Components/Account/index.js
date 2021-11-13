@@ -1,5 +1,6 @@
 import React from "react";
 import { MdOutlineSupervisorAccount } from "react-icons/md";
+
 import {useNavigate} from 'react-router-dom'
 import Login from "../User/Login";
 import Register from "../User/Register";
@@ -28,6 +29,8 @@ const Account = () => {
       </div>
      
 
+
+    
     </div>
   );
 };

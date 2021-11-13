@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from "react";
 import { IoMdLogIn } from "react-icons/io";
 import axios from "axios";
+
 import {useNavigate} from 'react-router-dom'
 import "./style.css";
 const Login = () => {
@@ -43,6 +44,7 @@ const Login = () => {
           }
 
 
+
   return (
     <div className="base-container">
       <div className="header">Login</div>
@@ -60,6 +62,7 @@ const Login = () => {
               type="text"
               name="username"
               placeholder="username"
+
               onChange={(e) => setUserame(e.target.value)}
               required
             />
@@ -70,12 +73,14 @@ const Login = () => {
               type="passward"
               name="passward"
               placeholder="passward"
+
               onChange={(e) => setPassward(e.target.value)}
               required
             />
           </div>
         </div>
         <div className="footer">
+
           <button type="button" className="btn" onClick={loginuser}>
             Login
           </button>
