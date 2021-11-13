@@ -5,12 +5,15 @@ import { GiMusicSpell, GiBlackBook } from "react-icons/gi";
 import { MdOutlineVideoLibrary, MdOutlinePodcasts } from "react-icons/md";
 import { useState, useEffect } from "react";
 
+
+
 import "./style.css";
 
 const Home = () => {
+ 
   return (
     <div className="contaner">
-      <Link to="songs" className="songs card">
+      <Link to="songs:id" className="songs card">
         <GiMusicSpell />
       </Link>
       

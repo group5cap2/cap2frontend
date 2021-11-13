@@ -20,6 +20,7 @@ import Register from "./Components/User/Register";
 import "./App.css";
 
 function App() {
+
   return (
     <div className="App">
       <BrowserRouter>

@@ -44,14 +44,15 @@ const Login = () => {
 
 
   return (
-    <div className="base-container">
+    <div className="all">
+    <div className="base-containerl">
       <div className="header">Login</div>
-      <div className="content">
+      <div className="contentl">
         <div className="image">
-          <h3>
+         
             
-             <IoMdLogIn />
-          </h3>
+             <IoMdLogIn className="img" />
+          
         </div>
         <div className="form">
           <div className="form-group">
@@ -81,6 +82,7 @@ const Login = () => {
           </button>
         </div>
       </div>
+    </div>
     </div>
   );
 };

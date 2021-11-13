@@ -17,9 +17,10 @@ const Account = () => {
         
     }
   return (
-    <div className="counter">
-      <div className="btn">
-        <div className="log" onClick={() => changeRoutedis("log")}>
+    <div className="count">
+      <div className="main">
+        <MdOutlineSupervisorAccount className="logo"/>
+        <div className="reg" onClick={() => changeRoutedis("log")}>
           <h1>LogIn</h1>
         </div>
         <div className="reg" onClick={() => changeRoutedis("reg")}>
