@@ -19,10 +19,10 @@ const Movie = () => {
   }, []);
 
   return (
-    <div>
+    <div className="container">
       {movie.map((item) => {
         return (
-          <div className="container">
+          <div className="sid-container">
             <ul className="songs">
               <li className="song">
                 <img src={item.artworkUrl100} />

@@ -1,28 +1,13 @@
-.container {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  text-align: center;
-  background-color: rgba(89, 0, 255, 0.301);
-}
 .songs {
+  text-align: center;
   list-style-type: none;
-  background-color: rgba(175, 29, 29, 0.521);
-width: 30%;
-  /* width: 3%;
-  border: 1px solid black;
-  background-color: rgba(0, 0, 0, 0.082); */
-}
 
-/* h2 {
-  font-size: 15px;
-  display: flex;
-  flex-direction: column;
-}
-
-.container img {
-  display: flex;
+  width: 30%;
   margin: auto;
-} */
+  padding: auto;
+}
+
+.song {
+  padding: 50px;
+  margin: 3px;
+}

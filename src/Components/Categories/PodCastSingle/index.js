@@ -17,10 +17,10 @@ const PodCastSingle = () => {
   }, []);
 
   return (
-    <div>
+    <div className="container">
       {podCastSingle.map((item) => {
         return (
-          <div className="container">
+          <div className="podcast">
             <ul className="songs">
               <li className="song">
                 <img src={item.artworkUrl100} />

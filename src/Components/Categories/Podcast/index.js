@@ -34,7 +34,8 @@ const Podcast = () => {
     }
   };
   return (
-    <div className="podcast-container">
+    <div className="container">
+      <h1>Podcast</h1>
       <input
         onKeyDown={getSearched}
         autoFocus

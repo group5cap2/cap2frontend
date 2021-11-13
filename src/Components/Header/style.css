@@ -1,0 +1,17 @@
+.header {
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+  height: 3rem;
+  padding-top: 4rem;
+  padding-left: 2rem;
+}
+
+.icon {
+  font-size: 2.3rem;
+  color: #5f9ea0;
+}
+/* .header h1 {
+    padding-right: 60rem;
+    font-size: 2rem;
+} */

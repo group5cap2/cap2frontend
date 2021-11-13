@@ -34,7 +34,8 @@ const TvShow = () => {
     }
   };
   return (
-    <div className="tvShow-container">
+    <div className="container">
+      <h1>TvShow</h1>
       <input
         onKeyDown={getSearched}
         autoFocus
