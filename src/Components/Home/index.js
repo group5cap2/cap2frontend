@@ -10,7 +10,7 @@ import "./style.css";
 
 const Home = () => {
   return (
-    <div className="contaner">
+    <div className="home-container">
       <Link to="songs" className="card">
         <GiMusicSpell />
         <h5>Songs</h5>
