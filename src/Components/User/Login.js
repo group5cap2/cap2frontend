@@ -7,7 +7,6 @@ const Login = () => {
   const [users, setUsers] = useState([]);
   const [username, setUserame] = useState("");
   const [passward, setPassward] = useState("");
-  const [result, setResult] = useState(false);
   const navigate = useNavigate();
 
 
@@ -17,14 +16,15 @@ const Login = () => {
   };
 
   const loginuser = () => {
+    let x=0;
     users.map((user) => {
-      if (user.username === username && user.passward === passward) {
-        setResult(true);
+      if (user.username == username && user.passward == passward) {
+        x=1;
       }
     });
-    if (result) {
+    if (x===1) {
       navigate(`/`);
-    } else if (!result) {
+    } else if (x===0) {
       let myWindow = window.open("", "", "width=200,height=100");
       myWindow.document.write("<p>wrong username/passward compination</p>");
       myWindow.focus();
@@ -33,6 +33,7 @@ const Login = () => {
   useEffect(() => {
     getAllusers();
   }, []);
+
 
   // const loginuser = () => {
   //   users.map((user) => {
