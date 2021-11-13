@@ -32,12 +32,14 @@ const Songs = () => {
 
  
   return (
-    <div>
+    <div className="songs-container">
       {songs.map((song) => {
         if (!r.includes(song.artistName)) {
           r.push(song.artistName);
           return (
-           <div onClick={() => info(song.artistName)}> <h1 >{song.artistName}</h1> </div>
+           <div onClick={() => info(song.artistName)} className='song'> 
+           <h1 >{song.artistName}</h1> 
+           </div>
           );
         }
       })}
