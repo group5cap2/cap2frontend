@@ -24,8 +24,24 @@ const MusicVideo = () => {
     navigate(`/musicVideo/${trackName}`);
   }
 
+  const getSearched = async (e) => {
+    if (e.key === "Enter") {
+      let myTerm = e.target.value;
+      const response = await axios.get(
+        `http://localhost:5500/movies/search/${myTerm}`
+      );
+      setMusicVid(response.data.results);
+    }
+  };
   return (
     <div className="music-container">
+      <input
+        onKeyDown={getSearched}
+        autoFocus
+        id="search"
+        placeholder="search"
+        type="text"
+      />
       {musicVid.map((music) => {
         if (!r.includes(music.trackName)) {
           r.push(music.trackName);

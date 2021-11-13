@@ -27,9 +27,24 @@ const AudioBooks = () => {
      
     };
   
-   
+    const getSearched = async (e) => {
+      if (e.key === "Enter") {
+        let myTerm = e.target.value;
+        const response = await axios.get(
+          `http://localhost:5500/movies/search/${myTerm}`
+        );
+        setAudios(response.data.results);
+      }
+    };
     return (
       <div className="audio-container">
+      <input
+        onKeyDown={getSearched}
+        autoFocus
+        id="search"
+        placeholder="search"
+        type="text"
+      />
         {audios.map((audio) => {
           if (!r.includes(audio.artistName)) {
             r.push(audio.artistName);
