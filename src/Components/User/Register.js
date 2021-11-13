@@ -12,6 +12,7 @@ const Register = () => {
   const [username, setUserame] = useState("");
   const [email, setEmail] = useState("");
   const [passward, setPassward] = useState("");
+  const [found,setFound]=useState(false);
   const navigate = useNavigate();
 
   const getAllusers = async () => {
@@ -19,16 +20,36 @@ const Register = () => {
     setUsers(user.data);
   };
 
-  useEffect(() => {
-    getAllusers();
-  }, []);
-
-  
 
   const postuser =()=>{
-    axios.post("http://localhost:5500/users", {username:username,email:email,passward:passward})
-    navigate(`/login`);
+    users.map(user=>{
+      if(user.username===username||user.email===email)
+      {
+        setFound(true)
+        
       }
+    })
+    if(found)
+    {
+      let myWindow = window.open("", "", "width=200,height=100");
+        myWindow.document.write("<p> username/email existing</p>");
+        myWindow.focus();
+    }
+    else if(!found)
+    {
+      axios.post("http://localhost:5500/users", {username:username,email:email,passward:passward})
+      navigate(`/login`);
+    }
+    
+      }
+
+      useEffect(() => {
+        getAllusers();
+      }, []);
+      useEffect(() => {
+        getAllusers();
+      }, [username]);
+    
   
 
   // const handelname = (e) => {
