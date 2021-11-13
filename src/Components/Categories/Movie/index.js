@@ -20,17 +20,16 @@ const Movie = () => {
 
   return (
     <div>
-      <h1> movie </h1>
       {movie.map((item) => {
         return (
           <div className="container">
             <ul className="songs">
               <li className="song">
+                <img src={item.artworkUrl100} />
                 <h2> {item.artistName} </h2>
                 <h2>{item.trackName} </h2>
                 <h2> {item.collectionCensoredName} </h2>
-                <img src={item.artworkUrl100} />
-                <a href={item.collectionViewUrl}>Music page</a>
+                <a href={item.collectionViewUrl}>Movie page</a>
                 <p>{item.releaseDate}</p>
               </li>
             </ul>

@@ -47,7 +47,10 @@ const MusicVideo = () => {
           r.push(music.trackName);
           return (
             <div onClick={() => info(music.trackName)} className="musics">
+              <img src={music.artworkUrl100} />
               <h1>{music.trackName}</h1>
+
+
             </div>
           );
         }

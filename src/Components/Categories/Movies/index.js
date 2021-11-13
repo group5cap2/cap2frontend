@@ -23,7 +23,7 @@ const Movies = () => {
   function info(name) {
     navigate(`/movies/${name}`);
   }
-  
+
   const getSearched = async (e) => {
     if (e.key === "Enter") {
       let myTerm = e.target.value;
@@ -48,6 +48,7 @@ const Movies = () => {
           return (
             <div onClick={() => info(movie.trackName)}>
               <h1>{movie.trackName}</h1>
+              <img src={movie.artworkUrl100} />
             </div>
           );
         }

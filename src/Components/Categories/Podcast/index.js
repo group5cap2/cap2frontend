@@ -47,6 +47,7 @@ const Podcast = () => {
           r.push(pod.trackName);
           return (
             <div onClick={() => info(pod.trackName)} className="podcast">
+              <img src={pod.artworkUrl100} />
               <h1>{pod.trackName}</h1>
             </div>
           );
