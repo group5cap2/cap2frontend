@@ -12,7 +12,6 @@ const Register = () => {
   const [username, setUserame] = useState("");
   const [email, setEmail] = useState("");
   const [passward, setPassward] = useState("");
-  const [found,setFound]=useState(false);
   const navigate = useNavigate();
 
   const getAllusers = async () => {
@@ -22,23 +21,31 @@ const Register = () => {
 
 
   const postuser =()=>{
-    users.map(user=>{
-      if(user.username===username||user.email===email)
+   
+    let x=0;
+    users.map(item=>{
+      if(item.username==username)
       {
-        setFound(true)
+        x=1;
         
+    
+      }else if(item.email==email){
+        x=1;
       }
     })
-    if(found)
+    if(x===1)
     {
       let myWindow = window.open("", "", "width=200,height=100");
         myWindow.document.write("<p> username/email existing</p>");
         myWindow.focus();
+      
     }
-    else if(!found)
+    else if(x===0)
+    
     {
       axios.post("http://localhost:5500/users", {username:username,email:email,passward:passward})
       navigate(`/login`);
+      
     }
     
       }
@@ -46,39 +53,7 @@ const Register = () => {
       useEffect(() => {
         getAllusers();
       }, []);
-      useEffect(() => {
-        getAllusers();
-      }, [username]);
-    
-  
-
-  // const handelname = (e) => {
-  //   const { value } = e.target;
-
-  //   setName(value);
-  // };
-  // const handelemail = (e) => {
-  //   const { value } = e.target;
-
-  //   setEmail(value);
-  // };
-  // const handelpassward = (e) => {
-  //   const { value } = e.target;
-
-  //   setPassward(value);
-  // };
-
-  // const handelSubmit = (e) => {
-  //   setNewUser({ username: name, email: email, passward: passward  });
-    
-  //   // e.preventDefault();
-  //   console.log(newUser);
-
-  //   // postuser();
-  //   // 
-  // };
-
-  
+     
 
   return (
     <div className="all">
