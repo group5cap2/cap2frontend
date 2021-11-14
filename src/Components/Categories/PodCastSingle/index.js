@@ -29,7 +29,7 @@ const PodCastSingle = () => {
 
 
   return (
- 
+
     <div className="container">
       {podCastSingle.map((item) => {
         return (

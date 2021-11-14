@@ -30,7 +30,7 @@ const Movie = () => {
 
 
   return (
- 
+
     <div className="container">
       {movie.map((item) => {
         return (

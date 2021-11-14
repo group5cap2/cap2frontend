@@ -39,7 +39,7 @@ const MusicVideo = () => {
 
 
   return (
-  
+
     <div className="container">
       <h1>Music Video</h1>
       <input

@@ -37,7 +37,7 @@ const Podcast = () => {
   };
 
   return (
- 
+
     <div className="container">
       <h1>Podcast</h1>
       <input

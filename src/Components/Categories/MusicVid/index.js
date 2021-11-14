@@ -31,7 +31,7 @@ const MusicVid = () => {
  
 
   return (
-   
+
     <div className="container">
       {musicVid.map((item) => {
         return (

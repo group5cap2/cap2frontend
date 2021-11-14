@@ -50,7 +50,7 @@ const favorite=()=>{
 }
 
   return (
-   
+
       <div className="home-container">
         <div onClick={songs} className="card">
           <GiMusicSpell />

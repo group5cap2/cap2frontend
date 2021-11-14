@@ -27,7 +27,7 @@ const TvShowSingle = () => {
 
 
   return (
- 
+
     <div className="container">
       {tvShowSingle.map((item) => {
         return (
