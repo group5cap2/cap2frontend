@@ -1,21 +1,27 @@
 .header {
-  text-align: center;
+  
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+
+  justify-content: right;
   height: 3rem;
-margin:auto;
-  padding: 4rem; 
+  margin: auto;
+  padding: 4rem;
+  padding-bottom: 8rem;
+  
 }
 
 .icon {
   font-size: 3rem;
-  color: #e5e5e5;
-    cursor: pointer;
+  color: #5aa85dd0;
+  cursor: pointer;
+  padding-right: 2rem;
+  padding-bottom: 2rem;
 }
 
 .imga {
-  width: 9rem;
-  height: 9rem;
+  position: absolute;
+  top: 1%;
+  left: 6%;
+  width: 12rem;
+  height: 12rem;
 }
-
