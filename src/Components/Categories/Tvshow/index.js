@@ -2,14 +2,13 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useNavigate,useParams } from "react-router-dom";
 import axios from "axios";
-import { AiFillHome} from 'react-icons/ai';
-import {GrFavorite} from 'react-icons/gr';
+
 import "./style.css";
 const TvShow = () => {
   const navigate = useNavigate();
   const [shows, setShows] = useState([]);
   // eslint-disable-next-line
-  const[id,setId]=useState(useParams().id)
+
 
   useEffect(() => {
     getData();
@@ -25,7 +24,7 @@ const TvShow = () => {
   // artist info
   const r = [];
   function info(name) {
-    navigate(`/tvshows/${name}/${id}`);
+    navigate(`/tvshows/${name}`);
   }
 
   const getSearched = async (e) => {
@@ -38,23 +37,10 @@ const TvShow = () => {
     }
   };
 
-const home=()=>{
-    navigate(`/${id}`);
-}
-const favor=()=>{
-    navigate(`/favorite/${id}`);
-}
+
 
   return (
-    <>
-    <div className="homeicon">
-    <h1 onClick={home} className="icon">
-      <AiFillHome />
-    </h1>
-    <h1 onClick={favor} className="icon">
-      <GrFavorite />
-    </h1>
-    </div>
+   
     <div className="container">
       <h1>TvShow</h1>
      
@@ -79,7 +65,7 @@ const favor=()=>{
       })}
       </div>
     </div>
-    </>
+
   );
 };
 

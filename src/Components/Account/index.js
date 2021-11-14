@@ -7,14 +7,14 @@ import Register from "../User/Register";
 import "./style.css";
 const Account = () => {
     const navigate = useNavigate();
-    const[id,setId]=useState(useParams().id)
+ 
 
     const changeRoutedis=(x)=>{
         if(x==="log"){
-            navigate(`/login/${id}`);
+            navigate(`/login`);
         }
         else{
-            navigate(`/register/${id}`);
+            navigate(`/register`);
         }
         
     }

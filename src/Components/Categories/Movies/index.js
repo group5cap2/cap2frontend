@@ -2,13 +2,12 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useNavigate,useParams } from "react-router-dom";
 import axios from "axios";
-import { AiFillHome} from 'react-icons/ai';
-import {GrFavorite} from 'react-icons/gr';
+
 import "./style.css";
 const Movies = () => {
   const navigate = useNavigate();
   const [movies, setMovies] = useState([]);
-  const[id,setId]=useState(useParams().id)
+
 
   useEffect(() => {
     getData();
@@ -24,7 +23,7 @@ const Movies = () => {
   // movies info
   const r = [];
   function info(name) {
-    navigate(`/movies/${name}/${id}`);
+    navigate(`/movies/${name}`);
   }
 
   const getSearched = async (e) => {
@@ -37,23 +36,10 @@ const Movies = () => {
     }
   };
 
-  const home=()=>{
-    navigate(`/${id}`);
-}
-const favor=()=>{
-    navigate(`/favorite/${id}`);
-}
+
 
   return (
-    <>
-    <div className="homeicon">
-    <h1 onClick={home} className="icon">
-      <AiFillHome />
-    </h1>
-    <h1 onClick={favor} className="icon">
-      <GrFavorite />
-    </h1>
-  </div>
+
     <div className="container">
       <h1>Movies</h1>
       <input
@@ -78,7 +64,7 @@ const favor=()=>{
       })}
       </div>
     </div>
-    </>
+
   );
 };
 
