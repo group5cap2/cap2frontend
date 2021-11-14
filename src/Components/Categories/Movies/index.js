@@ -50,7 +50,7 @@ const Movies = () => {
         if (!r.includes(movie.trackName)) {
           r.push(movie.trackName);
           return (
-            <div onClick={() => info(movie.trackName)}>
+            <div onClick={() => info(movie.trackName)} className="itemsm">
               <img src={movie.artworkUrl100} />
               <h1>{movie.trackName}</h1>
             </div>

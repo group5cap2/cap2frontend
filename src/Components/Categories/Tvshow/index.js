@@ -51,7 +51,7 @@ const TvShow = () => {
         if (!r.includes(show.artistName)) {
           r.push(show.artistName);
           return (
-            <div onClick={() => info(show.artistName)} className="show">
+            <div onClick={() => info(show.artistName)} className="items">
               <img src={show.artworkUrl100} />
               <h1>{show.artistName}</h1>
             </div>
