@@ -26,7 +26,7 @@ const Login = () => {
       }
     });
     if (x===1) {
-      navigate(`/${username}`);
+      navigate(`/`);
     } else if (x===0) {
       let myWindow = window.open("", "", "width=200,height=100");
       myWindow.document.write("<p>wrong username/passward compination</p>");

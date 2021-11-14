@@ -4,8 +4,8 @@ import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import { GiMusicSpell, GiBlackBook } from "react-icons/gi";
 import { IoTvSharp, IoBookSharp } from "react-icons/io5";
-import { AiFillHome} from 'react-icons/ai';
-import {GrFavorite} from 'react-icons/gr';
+// import { AiFillHome} from 'react-icons/ai';
+// import {GrFavorite} from 'react-icons/gr';
 import {
   MdMusicVideo,
   MdOutlinePodcasts,
@@ -17,48 +17,39 @@ import "./style.css";
 
 const Home = () => {
   // eslint-disable-next-line
-  const [id, setId] = useState(useParams().id);
+
   const navigate = useNavigate();
 
   const songs = () => {
-    navigate(`/songs/${id}`);
+    navigate(`/songs`);
   };
   const ebooks = () => {
-    navigate(`/ebooks/${id}`);
+    navigate(`/ebooks`);
   };
   const movies = () => {
-    navigate(`/movies/${id}`);
+    navigate(`/movies`);
   };
   const podcast = () => {
-    navigate(`/podcast/${id}`);
+    navigate(`/podcast`);
   };
   const audiobooks = () => {
-    navigate(`/audiobooks/${id}`);
+    navigate(`/audiobooks`);
   };
   const tvshow = () => {
-    navigate(`/tvshow/${id}`);
+    navigate(`/tvshow`);
   };
   const musicVideo = () => {
-    navigate(`/musicVideo/${id}`);
+    navigate(`/musicVideo`);
   };
 
   const home=()=>{
-    navigate(`/${id}`);
+    navigate(`/`);
 }
 const favorite=()=>{
-    navigate(`/favorite/${id}`);
+    navigate(`/favorite`);
 }
 
   return (
-    <>
-      <div className="homeicon">
-        <h1 onClick={home} className="icon1">
-          <AiFillHome />
-        </h1>
-        <h1 onClick={favorite} className="icon2">
-          <GrFavorite />
-        </h1>
-      </div>
 
       <div className="home-container">
         <div onClick={songs} className="card">
@@ -93,7 +84,7 @@ const favorite=()=>{
           <h5>MusicVideo</h5>
         </div>
       </div>
-    </>
+ 
   );
 };
 

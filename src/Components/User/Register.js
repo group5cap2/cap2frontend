@@ -9,7 +9,7 @@ import "./style.css";
 const Register = () => {
   const [users, setUsers] = useState([]);
   // eslint-disable-next-line
-  const [id,setId]=useState(useParams().id)
+  
 
   const [username, setUserame] = useState("");
   const [email, setEmail] = useState("");
@@ -49,7 +49,7 @@ const Register = () => {
     
     {
       axios.post("http://localhost:5500/users", {username:username,email:email,passward:passward})
-      navigate(`/login/${id}`);
+      navigate(`/login`);
       
     }
     
