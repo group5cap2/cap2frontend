@@ -2,27 +2,15 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Yuji Syuku', serif;;
+  font-family: "Yuji Syuku", serif;
 }
 
 
-.frontText {
-    position:absolute;
-    top: 35%;
-    left: 56%;
-    font-size: 11vh;
-    font-family: 'Puppies Play', cursive;
-            font-weight: bold;
-
-    
-    
-}
 
 .back {
-    width: 40%;
+  width: 33%;
 }
 
 .App {
-    
-    background: #14213d;
+  background: #14213d;
 }

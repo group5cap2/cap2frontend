@@ -30,7 +30,7 @@ const MusicVideo = () => {
     if (e.key === "Enter") {
       let myTerm = e.target.value;
       const response = await axios.get(
-        `http://localhost:5500/movies/search/${myTerm}`
+        `http://localhost:5500/musicvideo/search/${myTerm}`
       );
       setMusicVid(response.data.results);
     }

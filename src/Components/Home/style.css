@@ -1,5 +1,5 @@
 .home-container {
-  margin-top: 13.5rem;
+  margin-top: 14.3rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -22,6 +22,17 @@
   font-size: 4rem;
   color: #5f9ea0;
   cursor: pointer;
+  color: #5aa85dd0
+}
+
+.frontText {
+  position: absolute;
+  top: 30%;
+  left: 53%;
+  font-size: 14vh;
+  font-family: "Puppies Play", cursive;
+  font-weight: bold;
+  color: #be8608
 }
 
 .card:hover {

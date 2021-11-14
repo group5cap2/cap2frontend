@@ -29,9 +29,11 @@ const Movies = () => {
   const getSearched = async (e) => {
     if (e.key === "Enter") {
       let myTerm = e.target.value;
+      console.log(myTerm);
       const response = await axios.get(
         `http://localhost:5500/movies/search/${myTerm}`
       );
+      console.log(response.data.results);
       setMovies(response.data.results);
     }
   };
