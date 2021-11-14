@@ -4,22 +4,18 @@
   flex-direction: column;
   justify-content: center;
   height: 3rem;
-  margin: auto;
-  padding: 4rem;
-  
-  
+margin:auto;
+  padding: 4rem; 
 }
 
 .icon {
   font-size: 3rem;
   color: #e5e5e5;
+    cursor: pointer;
 }
 
 .imga {
   width: 9rem;
   height: 9rem;
 }
-/* .header h1 {
-    padding-right: 60rem;
-    font-size: 2rem;
-} */
+
