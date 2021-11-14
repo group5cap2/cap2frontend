@@ -31,7 +31,7 @@ const TvShow = () => {
     if (e.key === "Enter") {
       let myTerm = e.target.value;
       const response = await axios.get(
-        `http://localhost:5500/movies/search/${myTerm}`
+        `http://localhost:5500/tvshows/search/${myTerm}`
       );
       setShows(response.data.results);
     }

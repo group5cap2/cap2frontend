@@ -29,9 +29,11 @@ const Movies = () => {
   const getSearched = async (e) => {
     if (e.key === "Enter") {
       let myTerm = e.target.value;
+      console.log(myTerm);
       const response = await axios.get(
         `http://localhost:5500/movies/search/${myTerm}`
       );
+      console.log(response.data.results);
       setMovies(response.data.results);
     }
   };
@@ -55,7 +57,7 @@ const Movies = () => {
         if (!r.includes(movie.trackName)) {
           r.push(movie.trackName);
           return (
-            <div onClick={() => info(movie.trackName)} className="itemsm">
+            <div onClick={() => info(movie.trackName)} className="items">
               <img src={movie.artworkUrl100} />
               <h1>{movie.trackName}</h1>
             </div>
