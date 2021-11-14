@@ -31,27 +31,27 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route exact path="/:id" element={<Home />} />
-          <Route exact path="/audiobooks/:id" element={<AudioBooks />} />
-          <Route exact path="/ebooks/:id" element={<Ebooks />} />
-          <Route exact path="/movies/:id" element={<Movies />} />
-          <Route exact path="/musicVideo/:id" element={<MusicVideo />} />
-          <Route exact path="/podcast/:id" element={<Podcast />} />
-          <Route exact path="/songs/:id" element={<Songs />} />
-          <Route exact path="/tvshow/:id" element={<Tvshow />} />
-          <Route exact path="/song/:artistName/:id" element={<Song />} />
-          <Route exact path="/audiobooks/:artistName/:id" element={<Audiobook />} />
-          <Route exact path="/ebooks/:artistName/:id" element={<Ebook />} />
-          <Route exact path="/movies/:trackName/:id" element={<Movie />} />
-          <Route exact path="/musicVideo/:trackName/:id" element={<MusicVid />} />
-          <Route exact path="/podcast/:trackName/:id" element={<PodCastSingle />} />
-          <Route exact path="/tvshows/:artistName/:id" element={<TvShowSingle />} />
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/audiobooks" element={<AudioBooks />} />
+          <Route exact path="/ebooks" element={<Ebooks />} />
+          <Route exact path="/movies" element={<Movies />} />
+          <Route exact path="/musicVideo" element={<MusicVideo />} />
+          <Route exact path="/podcast" element={<Podcast />} />
+          <Route exact path="/songs" element={<Songs />} />
+          <Route exact path="/tvshow" element={<Tvshow />} />
+          <Route exact path="/song/:artistName" element={<Song />} />
+          <Route exact path="/audiobooks/:artistName" element={<Audiobook />} />
+          <Route exact path="/ebooks/:artistName" element={<Ebook />} />
+          <Route exact path="/movies/:trackName" element={<Movie />} />
+          <Route exact path="/musicVideo/:trackName" element={<MusicVid />} />
+          <Route exact path="/podcast/:trackName" element={<PodCastSingle />} />
+          <Route exact path="/tvshows/:artistName" element={<TvShowSingle />} />
 
-          <Route path="/account/:id" element={<Account />} />
-          <Route path="/favorite/:id" element={<Favorite />} />
+          <Route path="/account" element={<Account />} />
+          <Route path="/favorite" element={<Favorite />} />
 
-          <Route path="/login/:id" element={<Login />} />
-          <Route path="/register/:id" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       </BrowserRouter>
     </div>

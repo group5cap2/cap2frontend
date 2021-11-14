@@ -8,7 +8,7 @@ import "./style.css";
 const MusicVideo = () => {
   const navigate = useNavigate();
   const [musicVid, setMusicVid] = useState([]);
-  const[id,setId]=useState(useParams().id)
+
   useEffect(() => {
     getData();
   }, []);
@@ -23,7 +23,7 @@ const MusicVideo = () => {
   // artist info
   const r = [];
   function info(trackName) {
-    navigate(`/musicVideo/${trackName}/${id}`);
+    navigate(`/musicVideo/${trackName}`);
   }
 
   const getSearched = async (e) => {
@@ -36,23 +36,10 @@ const MusicVideo = () => {
     }
   };
 
-  const home=()=>{
-    navigate(`/${id}`);
-}
-const favor=()=>{
-    navigate(`/favorite/${id}`);
-}
+
 
   return (
-    <>
-    <div className="homeicon">
-    <h1 onClick={home} className="icon1">
-      <AiFillHome />
-    </h1>
-    <h1 onClick={favor} className="icon2">
-      <GrFavorite />
-    </h1>
-    </div>
+
     <div className="container">
       <h1>Music Video</h1>
       <input
@@ -79,7 +66,7 @@ const favor=()=>{
       })}
       </div>
     </div>
-    </>
+   
   );
 };
 

@@ -2,13 +2,12 @@ import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { AiFillHome} from 'react-icons/ai';
-import {GrFavorite} from 'react-icons/gr';
+
 import "./style.css";
 const Songs = () => {
   const navigate = useNavigate();
   const [songs, setSongs] = useState([]);
-  const [id, setId] = useState(useParams().id);
+
 
   useEffect(() => {
     getData();
@@ -24,7 +23,7 @@ const Songs = () => {
   // artist info
   const r = [];
   function info(name) {
-    navigate(`/song/${name}/${id}`);
+    navigate(`/song/${name}`);
   }
 
   const getSearched = async (e) => {
@@ -37,23 +36,10 @@ const Songs = () => {
     }
   };
 
-  const home=()=>{
-    navigate(`/${id}`);
-}
-const favor=()=>{
-    navigate(`/favorite/${id}`);
-}
+
 
   return (
-    <>
-    <div className="homeicon">
-    <h1 onClick={home} className="icon1">
-      <AiFillHome />
-    </h1>
-    <h1 onClick={favor} className="icon2">
-      <GrFavorite />
-    </h1>
-    </div>
+
     <div className="container">
       <h1>Songs</h1>
       <input
@@ -77,7 +63,7 @@ const favor=()=>{
         })}
       </div>
     </div>
-    </>
+
   );
 };
 

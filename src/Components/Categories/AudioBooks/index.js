@@ -1,15 +1,14 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useNavigate,useParams } from "react-router-dom";
-import { AiFillHome} from 'react-icons/ai';
-import {GrFavorite} from 'react-icons/gr';
+
 import axios from "axios";
 import "./style.css";
 
 const AudioBooks = () => {
   const navigate = useNavigate();
   const [audios, setAudios] = useState([]);
-  const[id,setId]=useState(useParams().id)
+
 
   useEffect(() => {
     getData();
@@ -25,7 +24,7 @@ const AudioBooks = () => {
   // artist info
   const r = [];
   function info(name) {
-    navigate(`/audiobooks/${name}/${id}`);
+    navigate(`/audiobooks/${name}`);
   }
 
   const getSearched = async (e) => {
@@ -38,23 +37,10 @@ const AudioBooks = () => {
     }
   };
 
-  const home=()=>{
-    navigate(`/${id}`);
-}
-const favor=()=>{
-    navigate(`/favorite/${id}`);
-}
+
 
   return (
-    <>
-    <div className="homeicon">
-    <h1 onClick={home} className="icon1">
-      <AiFillHome />
-    </h1>
-    <h1 onClick={favor} className="icon2">
-      <GrFavorite />
-    </h1>
-  </div>
+
     <div className="container">
       <h1>AudioBooks</h1>
       <input
@@ -79,7 +65,7 @@ const favor=()=>{
       })}
       </div>
     </div>
-    </>
+
   );
 };
 
