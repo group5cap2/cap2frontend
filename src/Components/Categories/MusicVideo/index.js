@@ -68,7 +68,7 @@ const favor=()=>{
         if (!r.includes(music.trackName)) {
           r.push(music.trackName);
           return (
-            <div onClick={() => info(music.trackName)} className="musics">
+            <div onClick={() => info(music.trackName)} className="items">
               <img src={music.artworkUrl100} />
               <h1>{music.trackName}</h1>
 

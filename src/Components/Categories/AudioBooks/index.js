@@ -70,7 +70,7 @@ const favor=()=>{
         if (!r.includes(audio.artistName)) {
           r.push(audio.artistName);
           return (
-            <div onClick={() => info(audio.artistName)} className="audios">
+            <div onClick={() => info(audio.artistName)} className="items">
               <img src={audio.artworkUrl100} />
               <h1>{audio.artistName}</h1>
             </div>

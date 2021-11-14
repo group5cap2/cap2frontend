@@ -70,7 +70,7 @@ const favor=()=>{
         if (!r.includes(ebook.artistName)) {
           r.push(ebook.artistName);
           return (
-            <div onClick={() => info(ebook.artistName)} className="books">
+            <div onClick={() => info(ebook.artistName)} className="items">
               <img src={ebook.artworkUrl100} />
               <h1>{ebook.artistName}</h1>
 

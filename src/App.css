@@ -1,31 +1,10 @@
-
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-.container {
-    background: linear-gradient(
-    150deg,
-    rgba(255, 255, 255, 0.5),
-    rgb(255, 255, 255, 0.4)
-  );
-  border-radius: 20px;
-  width: 65rem;
-  height: auto;
-  /* display: flex; */
-  flex-direction: column;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  align-items: center;
-  margin: 10rem;
-  padding: 10rem 3rem;
-  color: #24637c;
-  font-weight: bold;
-  text-align: center;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
+
 
 
 
