@@ -15,7 +15,6 @@ button {
 }
 
 .song {
-  /* margin-bottom: 5%; */
   font-size: 8px;
   border: 1px solid rgba(0, 0, 0, 0.274);
   border-radius: 2%;
@@ -69,14 +68,12 @@ button {
   );
   border-radius: 20px;
   width: 65rem;
-  /* height: auto; */
   flex-direction: column;
   justify-content: space-around;
   flex-wrap: wrap;
   align-items: center;
   margin: auto;
   margin-top: 4%;
-  /* padding: 3rem 3rem; */
   color: #24637c;
   text-align: center;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -86,5 +83,4 @@ button {
 .container h1 {
   margin: 10px 0 ;
   margin-left: 2px;
-  font-family:'Times New Roman', Times, serif;
 }

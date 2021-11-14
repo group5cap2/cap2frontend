@@ -12,7 +12,7 @@ import {
   MdOutlineMovieCreation,
 } from "react-icons/md";
 import { useState } from "react";
-
+import back from "../imgs/turntable.png"
 import "./style.css";
 
 const Home = () => {
@@ -42,49 +42,50 @@ const Home = () => {
     navigate(`/musicVideo`);
   };
 
-  const home=()=>{
+  const home = () => {
     navigate(`/`);
-}
-const favorite=()=>{
+  };
+  const favorite = () => {
     navigate(`/favorite`);
-}
+  };
 
   return (
+    <div className="home-container">
+      <img src={back} className='back'/>
+      <h1 className="frontText">Categories</h1>
 
-      <div className="home-container">
-        <div onClick={songs} className="card">
-          <GiMusicSpell />
-          <h5>Songs</h5>
-        </div>
-
-        <div onClick={ebooks} className="card">
-          <GiBlackBook />
-          <h5>Ebooks</h5>
-        </div>
-
-        <div onClick={movies} className="card">
-          <MdOutlineMovieCreation />
-          <h5>Movies</h5>
-        </div>
-
-        <div onClick={podcast} className="card">
-          <MdOutlinePodcasts />
-          <h5>Podcast</h5>
-        </div>
-        <div onClick={audiobooks} className="card">
-          <IoBookSharp />
-          <h5>Audiobooks</h5>
-        </div>
-        <div onClick={tvshow} className="card">
-          <IoTvSharp />
-          <h5>Tvshow</h5>
-        </div>
-        <div onClick={musicVideo} className="card">
-          <MdMusicVideo />
-          <h5>MusicVideo</h5>
-        </div>
+      <div onClick={songs} className="card">
+        <GiMusicSpell />
+        <h5>Songs</h5>
       </div>
- 
+
+      <div onClick={ebooks} className="card">
+        <GiBlackBook />
+        <h5>Ebooks</h5>
+      </div>
+
+      <div onClick={movies} className="card">
+        <MdOutlineMovieCreation />
+        <h5>Movies</h5>
+      </div>
+
+      <div onClick={podcast} className="card">
+        <MdOutlinePodcasts />
+        <h5>Podcast</h5>
+      </div>
+      <div onClick={audiobooks} className="card">
+        <IoBookSharp />
+        <h5>Audiobooks</h5>
+      </div>
+      <div onClick={tvshow} className="card">
+        <IoTvSharp />
+        <h5>Tvshow</h5>
+      </div>
+      <div onClick={musicVideo} className="card">
+        <MdMusicVideo />
+        <h5>MusicVideo</h5>
+      </div>
+    </div>
   );
 };
 

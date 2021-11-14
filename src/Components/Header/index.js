@@ -3,8 +3,7 @@ import { AiFillHome} from 'react-icons/ai';
 import {GrFavorite} from 'react-icons/gr';
 import {MdManageAccounts} from 'react-icons/md'
 import { useNavigate } from "react-router-dom";
-
-
+import logo from "../imgs/logo.png"
 // import Logo from '';
 import './style.css';
 const Header = () => {
@@ -26,7 +25,6 @@ const Header = () => {
 
     return (
         <div className="header">
-            
            <h1 onClick={home} className="icon" ><AiFillHome /></h1>
            <h1 onClick={favorite} className="icon"><GrFavorite /></h1>
            <h1 onClick={account} className="icon"><MdManageAccounts /></h1>

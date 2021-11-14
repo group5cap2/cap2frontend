@@ -24,8 +24,6 @@ import Movie from "./Components/Categories/Movie";
 import "./App.css";
 
 function App() {
-
-
   return (
     <div className="App">
       <BrowserRouter>
