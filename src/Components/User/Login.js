@@ -23,9 +23,11 @@ const Login = () => {
       // eslint-disable-next-line
       if (user.username == username && user.passward == passward) {
         x=1;
+        localStorage.setItem("activ",JSON.stringify(user));
       }
     });
     if (x===1) {
+      
       navigate(`/`);
     } else if (x===0) {
       let myWindow = window.open("", "", "width=200,height=100");
