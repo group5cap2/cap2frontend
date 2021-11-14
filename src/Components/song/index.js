@@ -16,26 +16,31 @@ const Song = () => {
     // eslint-disable-next-line
     setSongs(item.data.filter((item) => artistName == item.artistName));
   };
-  console.log(songs);
+ 
   useEffect(() => {
     getData();
   });
 
-  const favorite = () => {
-    let usefav = JSON.parse(localStorage.getItem("activ"));
-    let name = usefav.username;
-    let fav = usefav.favorite;
-    fav.push(songs);
-    let newUser = {
-      username: name,
-      favorite: fav,
-    };
-    axios.post("http://localhost:5500/users/favorite", {
-      username: name,
-      favorite: songs,
-    });
-    localStorage.setItem("activ", JSON.stringify(newUser));
-  };
+  const favorite=()=>{
+    let usefav=JSON.parse(localStorage.getItem("activ"));
+    let name =usefav.username;
+    let fav=usefav.favorite;
+    let x=0;
+    fav.map(item=>{
+      if(item[0].trackId==songs[0].trackId){
+           x=1;
+      }
+    })
+    if(x==0){
+      fav.push(songs)
+      let newUser={
+        username: name,
+        favorite: fav,
+      };
+      axios.post("http://localhost:5500/users/favorite",{username:name,favorite: songs})
+      localStorage.setItem("activ",JSON.stringify(newUser));
+    }
+  }
 
   return (
     <div className="container">
@@ -59,6 +64,7 @@ const Song = () => {
       <h1>{songs.country}</h1>
       <h1>{songs.trackName}</h1>
       <button onClick={favorite}>like</button>
+    
     </div>
   );
 };

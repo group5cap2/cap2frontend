@@ -15,7 +15,7 @@ const PodCastSingle = () => {
     const item = await axios.get("http://localhost:5500/podcasts");
     setPodCastSingle(item.data.filter((item) => trackName == item.trackName));
   };
-  console.log(podCastSingle);
+  console.log(podCastSingle[0]);
   useEffect(() => {
     getData();
   }, []);
@@ -24,14 +24,21 @@ const PodCastSingle = () => {
     let usefav=JSON.parse(localStorage.getItem("activ"));
     let name =usefav.username;
     let fav=usefav.favorite;
-    fav.push(podCastSingle)
-    let newUser={
-      username: name,
-      favorite: fav,
-    };
-    axios.post("http://localhost:5500/users/favorite",{username:name,favorite: podCastSingle})
-    localStorage.setItem("activ",JSON.stringify(newUser));
-
+    let x=0;
+    fav.map(item=>{
+      if(item[0].trackId==podCastSingle[0].trackId){
+           x=1;
+      }
+    })
+    if(x==0){
+      fav.push(podCastSingle)
+      let newUser={
+        username: name,
+        favorite: fav,
+      };
+      axios.post("http://localhost:5500/users/favorite",{username:name,favorite: podCastSingle})
+      localStorage.setItem("activ",JSON.stringify(newUser));
+    }
   }
 
 

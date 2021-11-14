@@ -17,19 +17,26 @@ const TvShowSingle = () => {
   useEffect(() => {
     getData();
   }, []);
-
+console.log(tvShowSingle[0])
   const favorite=()=>{
     let usefav=JSON.parse(localStorage.getItem("activ"));
     let name =usefav.username;
     let fav=usefav.favorite;
-    fav.push(tvShowSingle)
-    let newUser={
-      username: name,
-      favorite: fav,
-    };
-    axios.post("http://localhost:5500/users/favorite",{username:name,favorite: tvShowSingle})
-    localStorage.setItem("activ",JSON.stringify(newUser));
-
+    let x=0;
+    fav.map(item=>{
+      if(item[0].trackId==tvShowSingle[0].trackId){
+           x=1;
+      }
+    })
+    if(x==0){
+      fav.push(tvShowSingle)
+      let newUser={
+        username: name,
+        favorite: fav,
+      };
+      axios.post("http://localhost:5500/users/favorite",{username:name,favorite: tvShowSingle})
+      localStorage.setItem("activ",JSON.stringify(newUser));
+    }
   }
 
 

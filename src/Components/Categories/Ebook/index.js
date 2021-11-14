@@ -15,7 +15,7 @@ const Ebooks = () => {
     const item = await axios.get("http://localhost:5500/ebooks");
     setEbooks(item.data.filter((item) => artistName == item.artistName));
   };
-  console.log(ebooks);
+  console.log(ebooks[0]);
   useEffect(() => {
     getData();
   }, []);
@@ -24,14 +24,21 @@ const Ebooks = () => {
     let usefav=JSON.parse(localStorage.getItem("activ"));
     let name =usefav.username;
     let fav=usefav.favorite;
-    fav.push(ebooks)
-    let newUser={
-      username: name,
-      favorite: fav,
-    };
-    axios.post("http://localhost:5500/users/favorite",{username:name,favorite: ebooks})
-    localStorage.setItem("activ",JSON.stringify(newUser));
-
+    let x=0;
+    fav.map(item=>{
+      if(item[0].trackId==ebooks[0].trackId){
+           x=1;
+      }
+    })
+    if(x==0){
+      fav.push(ebooks)
+      let newUser={
+        username: name,
+        favorite: fav,
+      };
+      axios.post("http://localhost:5500/users/favorite",{username:name,favorite: ebooks})
+      localStorage.setItem("activ",JSON.stringify(newUser));
+    }
   }
 
 
