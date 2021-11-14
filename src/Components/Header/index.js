@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
-import { AiFillHome} from 'react-icons/ai';
-import {GrFavorite} from 'react-icons/gr';
+// import { AiFillHome} from 'react-icons/ai';
+// import {GrFavorite} from 'react-icons/gr';
 import {MdManageAccounts} from 'react-icons/md'
 import { useNavigate } from "react-router-dom";
 
@@ -12,12 +12,12 @@ const Header = () => {
     // eslint-disable-next-line
     const [id,setId]=useState(0);
     // setId(useParams().id)
-    const home=()=>{
-        navigate(`/${id}`);
-    }
-    const favorite=()=>{
-        navigate(`/favorite/${id}`);
-    }
+    // const home=()=>{
+    //     navigate(`/${id}`);
+    // }
+    // const favorite=()=>{
+    //     navigate(`/favorite/${id}`);
+    // }
     const account=()=>{
         navigate(`/account/${id}`);
     }
@@ -27,8 +27,8 @@ const Header = () => {
     return (
         <div className="header">
             
-           <h1 onClick={home} className="icon" ><AiFillHome /></h1>
-           <h1 onClick={favorite} className="icon"><GrFavorite /></h1>
+           {/* <h1 onClick={home} className="icon" ><AiFillHome /></h1>
+           <h1 onClick={favorite} className="icon"><GrFavorite /></h1> */}
            <h1 onClick={account} className="icon"><MdManageAccounts /></h1>
 
         </div>
