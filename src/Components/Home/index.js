@@ -52,10 +52,10 @@ const favorite=()=>{
   return (
     <>
       <div className="homeicon">
-        <h1 onClick={home} className="icon">
+        <h1 onClick={home} className="icon1">
           <AiFillHome />
         </h1>
-        <h1 onClick={favorite} className="icon">
+        <h1 onClick={favorite} className="icon2">
           <GrFavorite />
         </h1>
       </div>
