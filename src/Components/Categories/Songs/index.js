@@ -1,12 +1,12 @@
 import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useNavigate,useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "./style.css";
 const Songs = () => {
   const navigate = useNavigate();
   const [songs, setSongs] = useState([]);
-  const[id,setId]=useState(useParams().id)
+  const [id, setId] = useState(useParams().id);
 
   useEffect(() => {
     getData();
@@ -45,19 +45,19 @@ const Songs = () => {
         placeholder="search"
         type="text"
       />
-
-      {songs.map((song) => {
-        if (!r.includes(song.artistName)) {
-          r.push(song.artistName);
-          return (
-            
+      <div className="cards-sec">
+        {songs.map((song) => {
+          if (!r.includes(song.artistName)) {
+            r.push(song.artistName);
+            return (
               <div onClick={() => info(song.artistName)}>
                 <img src={song.artworkUrl100} />
                 <h1>{song.artistName}</h1>
               </div>
-          );
-        }
-      })}
+            );
+          }
+        })}
+      </div>
     </div>
   );
 };

@@ -43,6 +43,8 @@ const MusicVideo = () => {
         placeholder="search"
         type="text"
       />
+      <div className='cards-sec'>
+
       {musicVid.map((music) => {
         if (!r.includes(music.trackName)) {
           r.push(music.trackName);
@@ -56,6 +58,7 @@ const MusicVideo = () => {
           );
         }
       })}
+      </div>
     </div>
   );
 };

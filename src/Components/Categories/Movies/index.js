@@ -44,6 +44,8 @@ const Movies = () => {
         placeholder="search"
         type="text"
       />
+      <div className='cards-sec'>
+
       {movies.map((movie) => {
         if (!r.includes(movie.trackName)) {
           r.push(movie.trackName);
@@ -55,6 +57,7 @@ const Movies = () => {
           );
         }
       })}
+      </div>
     </div>
   );
 };
