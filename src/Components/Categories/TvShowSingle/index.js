@@ -18,12 +18,19 @@ const TvShowSingle = () => {
     getData();
   }, []);
 
-  // const favorite=()=>{
-  //   // if(id!=0){
-  //   //   axios.post("http://localhost:5500/users/favorite", {username:id,favorite:tvShowSingle})
-  //   // }
-  // }
+  const favorite=()=>{
+    let usefav=JSON.parse(localStorage.getItem("activ"));
+    let name =usefav.username;
+    let fav=usefav.favorite;
+    fav.push(tvShowSingle)
+    let newUser={
+      username: name,
+      favorite: fav,
+    };
+    axios.post("http://localhost:5500/users/favorite",{username:name,favorite: tvShowSingle})
+    localStorage.setItem("activ",JSON.stringify(newUser));
 
+  }
 
 
   return (
@@ -48,7 +55,7 @@ const TvShowSingle = () => {
       <h1>{tvShowSingle.kind}</h1>
       <h1>{tvShowSingle.country}</h1>
       <h1>{tvShowSingle.trackName}</h1>
-      <button >like</button>
+      <button onClick={favorite}>like</button>
     </div>
 
   );

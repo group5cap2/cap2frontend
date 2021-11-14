@@ -22,11 +22,20 @@ const MusicVid = () => {
     getData();
   }, []);
 
-  // const favorite=()=>{
-  //   // if(id!=0){
-  //   //   axios.post("http://localhost:5500/users/favorite", {username:id,favorite:musicVid})
-  //   // }
-  // }
+  const favorite=()=>{
+    let usefav=JSON.parse(localStorage.getItem("activ"));
+    let name =usefav.username;
+    let fav=usefav.favorite;
+    fav.push(musicVid)
+    let newUser={
+      username: name,
+      favorite: fav,
+    };
+    axios.post("http://localhost:5500/users/favorite",{username:name,favorite: musicVid})
+    localStorage.setItem("activ",JSON.stringify(newUser));
+
+  }
+
 
  
 
@@ -52,7 +61,7 @@ const MusicVid = () => {
       <h1>{musicVid.kind}</h1>
       <h1>{musicVid.country}</h1>
       <h1>{musicVid.trackName}</h1>
-      <button >like</button>
+      <button onClick={favorite}>like</button>
     </div>
 
   );

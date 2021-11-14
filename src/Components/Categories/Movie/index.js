@@ -21,11 +21,19 @@ const Movie = () => {
     getData();
   }, []);
 
-  // const favorite=()=>{
-  //   // if(id!=0){
-  //   //   axios.post("http://localhost:5500/users/favorite", {username:id,favorite:movie})
-  //   // }
-  // }
+  const favorite=()=>{
+    let usefav=JSON.parse(localStorage.getItem("activ"));
+    let name =usefav.username;
+    let fav=usefav.favorite;
+    fav.push(movie)
+    let newUser={
+      username: name,
+      favorite: fav,
+    };
+    axios.post("http://localhost:5500/users/favorite",{username:name,favorite: movie})
+    localStorage.setItem("activ",JSON.stringify(newUser));
+
+  }
 
 
 
@@ -51,7 +59,7 @@ const Movie = () => {
       <h1>{movie.kind}</h1>
       <h1>{movie.country}</h1>
       <h1>{movie.trackName}</h1>
-      <button >like</button>
+      <button onClick={favorite}>like</button>
     </div>
    
   );

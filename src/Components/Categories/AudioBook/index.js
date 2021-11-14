@@ -9,6 +9,7 @@ const Audiobook = () => {
   let artistName = useParams().artistName;
   const [audiobook, setAudiobook] = useState([]);
 
+
   const navigate = useNavigate();
   
 
@@ -22,11 +23,19 @@ const Audiobook = () => {
     getData();
   }, []);
 
-  // const favorite=()=>{
-  //   // {}
-  //   //   axios.post("http://localhost:5500/users/favorite", {username:id,favorite:audiobook})
-  //   // }
-  // }
+  const favorite=()=>{
+    let usefav=JSON.parse(localStorage.getItem("activ"));
+    let name =usefav.username;
+    let fav=usefav.favorite;
+    fav.push(audiobook)
+    let newUser={
+      username: name,
+      favorite: fav,
+    };
+    axios.post("http://localhost:5500/users/favorite",{username:name,favorite: audiobook})
+    localStorage.setItem("activ",JSON.stringify(newUser));
+
+  }
 
 
   return (
@@ -52,7 +61,7 @@ const Audiobook = () => {
       <h1>{audiobook.kind}</h1>
       <h1>{audiobook.country}</h1>
       <h1>{audiobook.trackName}</h1>
-      <button>like</button>
+      <button onClick={favorite}>like</button>
     </div>
 
   );
