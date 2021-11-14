@@ -1,12 +1,15 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router";
+import { useParams,useNavigate } from "react-router";
 import axios from "axios";
+import { AiFillHome} from 'react-icons/ai';
+import {GrFavorite} from 'react-icons/gr';
 import "./style.css";
 const TvShowSingle = () => {
   let artistName = useParams().artistName;
   const [tvShowSingle, setTvShowSingle] = useState([]);
-  const[id,setId]=useState(useParams().id)
+  const[id,setId]=useState(useParams().id);
+  const navigate = useNavigate();
 
   const getData = async () => {
     const item = await axios.get("http://localhost:5500/tvshows");
@@ -22,7 +25,23 @@ const TvShowSingle = () => {
     }
   }
 
+  const home=()=>{
+    navigate(`/${id}`);
+}
+const favor=()=>{
+    navigate(`/favorite/${id}`);
+}
+
   return (
+    <>
+    <div className="homeicon">
+    <h1 onClick={home} className="icon">
+      <AiFillHome />
+    </h1>
+    <h1 onClick={favor} className="icon">
+      <GrFavorite />
+    </h1>
+    </div>
     <div className="container">
       {tvShowSingle.map((item) => {
         return (
@@ -45,6 +64,7 @@ const TvShowSingle = () => {
       <h1>{tvShowSingle.trackName}</h1>
       <button onClick={favorite}>like</button>
     </div>
+    </>
   );
 };
 

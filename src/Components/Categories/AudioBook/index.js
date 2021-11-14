@@ -1,14 +1,16 @@
 import React from "react";
 import { useState, useEffect } from "react";
-// import { useState } from "react";
-// import { useEffect } from "react";
-import { useParams } from "react-router";
+
+import { useParams,useNavigate } from "react-router";
+import { AiFillHome} from 'react-icons/ai';
+import {GrFavorite} from 'react-icons/gr';
 import axios from "axios";
 import "./style.css";
 const Audiobook = () => {
   let artistName = useParams().artistName;
   const [audiobook, setAudiobook] = useState([]);
   const[id,setId]=useState(useParams().id)
+  const navigate = useNavigate();
   
 
   const getData = async () => {
@@ -26,8 +28,23 @@ const Audiobook = () => {
       axios.post("http://localhost:5500/users/favorite", {username:id,favorite:audiobook})
     }
   }
+  const home=()=>{
+    navigate(`/${id}`);
+}
+const favor=()=>{
+    navigate(`/favorite/${id}`);
+}
 
   return (
+    <>
+    <div className="homeicon">
+    <h1 onClick={home} className="icon">
+      <AiFillHome />
+    </h1>
+    <h1 onClick={favor} className="icon">
+      <GrFavorite />
+    </h1>
+  </div>
     <div className="container">
       {audiobook.map((item) => {
         return (
@@ -51,6 +68,7 @@ const Audiobook = () => {
       <h1>{audiobook.trackName}</h1>
       <button onClick={favorite}>like</button>
     </div>
+    </>
   );
 };
 
