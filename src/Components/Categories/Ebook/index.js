@@ -20,11 +20,19 @@ const Ebooks = () => {
     getData();
   }, []);
 
-  // const favorite=()=>{
-  //   // if(id!=0){
-  //   //   axios.post("http://localhost:5500/users/favorite", {username:id,favorite:ebooks})
-  //   // }
-  // };
+  const favorite=()=>{
+    let usefav=JSON.parse(localStorage.getItem("activ"));
+    let name =usefav.username;
+    let fav=usefav.favorite;
+    fav.push(ebooks)
+    let newUser={
+      username: name,
+      favorite: fav,
+    };
+    axios.post("http://localhost:5500/users/favorite",{username:name,favorite: ebooks})
+    localStorage.setItem("activ",JSON.stringify(newUser));
+
+  }
 
 
   return (
@@ -49,7 +57,7 @@ const Ebooks = () => {
       <h1>{ebooks.kind}</h1>
       <h1>{ebooks.country}</h1>
       <h1>{ebooks.trackName}</h1>
-      <button >like</button>
+      <button onClick={favorite}>like</button>
     </div>
 
   );

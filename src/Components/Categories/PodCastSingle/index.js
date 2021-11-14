@@ -20,11 +20,19 @@ const PodCastSingle = () => {
     getData();
   }, []);
 
-  // const favorite=()=>{
-  //   // if(id!=0){
-  //   //   axios.post("http://localhost:5500/users/favorite", {username:id,favorite:podCastSingle})
-  //   // }
-  // }
+  const favorite=()=>{
+    let usefav=JSON.parse(localStorage.getItem("activ"));
+    let name =usefav.username;
+    let fav=usefav.favorite;
+    fav.push(podCastSingle)
+    let newUser={
+      username: name,
+      favorite: fav,
+    };
+    axios.post("http://localhost:5500/users/favorite",{username:name,favorite: podCastSingle})
+    localStorage.setItem("activ",JSON.stringify(newUser));
+
+  }
 
 
 
@@ -51,7 +59,7 @@ const PodCastSingle = () => {
       <h1>{podCastSingle.kind}</h1>
       <h1>{podCastSingle.country}</h1>
       <h1>{podCastSingle.trackName}</h1>
-      <button >like</button>
+      <button onClick={favorite}>like</button>
     </div>
 
   );

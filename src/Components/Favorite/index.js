@@ -45,7 +45,7 @@ const Favorite = () => {
       <h1>{item[0].kind}</h1>
           <h1>{item[0].country}</h1>
           <h1>{item[0].trackName}</h1>
-           <button>like</button> 
+           {/* <button>like</button>  */}
        </> 
       );
     })}
