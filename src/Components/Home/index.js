@@ -4,8 +4,7 @@ import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import { GiMusicSpell, GiBlackBook } from "react-icons/gi";
 import { IoTvSharp, IoBookSharp } from "react-icons/io5";
-// import { AiFillHome} from 'react-icons/ai';
-// import {GrFavorite} from 'react-icons/gr';
+
 import {
   MdMusicVideo,
   MdOutlinePodcasts,
