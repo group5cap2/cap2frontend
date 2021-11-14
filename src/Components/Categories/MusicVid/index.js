@@ -17,7 +17,7 @@ const MusicVid = () => {
     console.log("item =" + item);
     console.log(musicVid);
   };
-  console.log(musicVid);
+  console.log(musicVid[0]);
   useEffect(() => {
     getData();
   }, []);
@@ -26,14 +26,21 @@ const MusicVid = () => {
     let usefav=JSON.parse(localStorage.getItem("activ"));
     let name =usefav.username;
     let fav=usefav.favorite;
-    fav.push(musicVid)
-    let newUser={
-      username: name,
-      favorite: fav,
-    };
-    axios.post("http://localhost:5500/users/favorite",{username:name,favorite: musicVid})
-    localStorage.setItem("activ",JSON.stringify(newUser));
-
+    let x=0;
+    fav.map(item=>{
+      if(item[0].trackId==musicVid[0].trackId){
+           x=1;
+      }
+    })
+    if(x==0){
+      fav.push(musicVid)
+      let newUser={
+        username: name,
+        favorite: fav,
+      };
+      axios.post("http://localhost:5500/users/favorite",{username:name,favorite: musicVid})
+      localStorage.setItem("activ",JSON.stringify(newUser));
+    }
   }
 
 

@@ -16,7 +16,7 @@ const Movie = () => {
     // console.log(item);
     console.log(movie);
   };
-  //   console.log(movie);
+    console.log(movie[0]);
   useEffect(() => {
     getData();
   }, []);
@@ -25,14 +25,21 @@ const Movie = () => {
     let usefav=JSON.parse(localStorage.getItem("activ"));
     let name =usefav.username;
     let fav=usefav.favorite;
-    fav.push(movie)
-    let newUser={
-      username: name,
-      favorite: fav,
-    };
-    axios.post("http://localhost:5500/users/favorite",{username:name,favorite: movie})
-    localStorage.setItem("activ",JSON.stringify(newUser));
-
+    let x=0;
+    fav.map(item=>{
+      if(item[0].trackId==movie[0].trackId){
+           x=1;
+      }
+    })
+    if(x==0){
+      fav.push(movie)
+      let newUser={
+        username: name,
+        favorite: fav,
+      };
+      axios.post("http://localhost:5500/users/favorite",{username:name,favorite: movie})
+      localStorage.setItem("activ",JSON.stringify(newUser));
+    }
   }
 
 
