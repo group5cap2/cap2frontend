@@ -2,8 +2,6 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useParams,useNavigate } from "react-router";
 import axios from "axios";
-import { AiFillHome} from 'react-icons/ai';
-import {GrFavorite} from 'react-icons/gr';
 import "./style.css";
 const Song = () => {
   let artistName = useParams().artistName;
@@ -28,23 +26,10 @@ const Song = () => {
     }
   }
 
-  const home=()=>{
-    navigate(`/${id}`);
-}
-const favor=()=>{
-    navigate(`/favorite/${id}`);
-}
+  
 
   return (
-    <>
-    <div className="homeicon">
-    <h1 onClick={home} className="icon1">
-      <AiFillHome />
-    </h1>
-    <h1 onClick={favor} className="icon2">
-      <GrFavorite />
-    </h1>
-    </div>
+    
     <div className="container">
       {songs.map((item) => {
         return (
@@ -69,7 +54,7 @@ const favor=()=>{
       <h1>{songs.trackName}</h1>
       <button onClick={favorite}>like</button>
     </div>
-    </>
+   
   );
 };
 

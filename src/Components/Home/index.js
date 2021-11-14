@@ -4,8 +4,8 @@ import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import { GiMusicSpell, GiBlackBook } from "react-icons/gi";
 import { IoTvSharp, IoBookSharp } from "react-icons/io5";
-import { AiFillHome} from 'react-icons/ai';
-import {GrFavorite} from 'react-icons/gr';
+import { AiFillHome, AiOutlineStar} from 'react-icons/ai';
+
 import {
   MdMusicVideo,
   MdOutlinePodcasts,
@@ -56,7 +56,7 @@ const favorite=()=>{
           <AiFillHome />
         </h1>
         <h1 onClick={favorite} className="icon2">
-          <GrFavorite />
+          <AiOutlineStar />
         </h1>
       </div>
 
