@@ -46,6 +46,8 @@ const Ebooks = () => {
         placeholder="search"
         type="text"
       />
+      <div className='cards-sec'>
+
       {ebooks.map((ebook) => {
         if (!r.includes(ebook.artistName)) {
           r.push(ebook.artistName);
@@ -58,6 +60,7 @@ const Ebooks = () => {
           );
         }
       })}
+      </div>
     </div>
   );
 };

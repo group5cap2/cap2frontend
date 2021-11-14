@@ -38,14 +38,15 @@ const TvShow = () => {
   return (
     <div className="container">
       <h1>TvShow</h1>
-      // eslint-disable-next-line
+     
       <input
         onKeyDown={getSearched}
         autoFocus
         id="search"
         placeholder="search"
         type="text"/>
-      // eslint-disable-next-line
+      <div className='cards-sec'>
+
       {shows.map((show) => {
         if (!r.includes(show.artistName)) {
           r.push(show.artistName);
@@ -57,6 +58,7 @@ const TvShow = () => {
           );
         }
       })}
+      </div>
     </div>
   );
 };

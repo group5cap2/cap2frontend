@@ -45,6 +45,8 @@ const AudioBooks = () => {
         placeholder="search"
         type="text"
       />
+      <div className='cards-sec'>
+
       {audios.map((audio) => {
         if (!r.includes(audio.artistName)) {
           r.push(audio.artistName);
@@ -56,6 +58,7 @@ const AudioBooks = () => {
           );
         }
       })}
+      </div>
     </div>
   );
 };

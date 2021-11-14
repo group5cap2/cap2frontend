@@ -44,6 +44,8 @@ const Podcast = () => {
         placeholder="search"
         type="text"
       />
+      <div className='cards-sec'>
+
       {podcasts.map((pod) => {
         if (!r.includes(pod.trackName)) {
           r.push(pod.trackName);
@@ -55,6 +57,7 @@ const Podcast = () => {
           );
         }
       })}
+      </div>
     </div>
   );
 };
