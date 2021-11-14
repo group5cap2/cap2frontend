@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { useParams,useNavigate } from "react-router";
+import { useParams, useNavigate } from "react-router";
 import axios from "axios";
 
 import "./style.css";
@@ -21,32 +21,29 @@ const Song = () => {
     getData();
   });
 
-  const favorite=()=>{
-    let usefav=JSON.parse(localStorage.getItem("activ"));
-    let name =usefav.username;
-    let fav=usefav.favorite;
-    fav.push(songs)
-    let newUser={
+  const favorite = () => {
+    let usefav = JSON.parse(localStorage.getItem("activ"));
+    let name = usefav.username;
+    let fav = usefav.favorite;
+    fav.push(songs);
+    let newUser = {
       username: name,
       favorite: fav,
     };
-    axios.post("http://localhost:5500/users/favorite",{username:name,favorite: songs})
-    localStorage.setItem("activ",JSON.stringify(newUser));
-
-  }
-
-
+    axios.post("http://localhost:5500/users/favorite", {
+      username: name,
+      favorite: songs,
+    });
+    localStorage.setItem("activ", JSON.stringify(newUser));
+  };
 
   return (
-
     <div className="container">
       {songs.map((item) => {
         return (
           <div>
             <ul className="songs">
-        
               <li className="song">
-           
                 <img src={item.artworkUrl100} alt="img" />
                 <h2>artist :{item.artistName} </h2>
                 <h2>Song :{item.trackName} </h2>
@@ -63,7 +60,6 @@ const Song = () => {
       <h1>{songs.trackName}</h1>
       <button onClick={favorite}>like</button>
     </div>
-
   );
 };
 

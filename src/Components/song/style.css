@@ -4,29 +4,38 @@
   text-align: center;
   list-style-type: none;
   width: 40rem;
-  height: auto;
   padding: 2%;
   margin: auto;
 }
 button {
   margin-bottom: 10px;
+  background-color: rgba(252, 62, 62, 0.774);
+  border-radius: 6%;
+}
+
+button:hover {
+  background-color: red;
+
 }
 .songs img {
   width: 100%;
 }
+.song a {
+  color: white;
+  font-size: 20px;
+}
 
 .song {
-  
   border: 1px solid rgba(0, 0, 0, 0.274);
   border-radius: 2%;
   box-shadow: 9px 10px 20px 0px rgba(17, 17, 17, 0.514);
-  color: black;
+  color: white;
   width: 50%;
   height: 25rem;
   margin: auto;
-
   font-size: 10px;
-
+  height: max-content;
+  background-color: #14213d;
 }
 
 .cards-sec {
@@ -72,11 +81,6 @@ button {
     #cd9e30,
     #be8608
   );
-  /* background: linear-gradient(
-    150deg,
-    rgba(255, 255, 255, 0.5),
-    rgb(255, 255, 255, 0.4)
-  ); */
   border-radius: 20px;
   width: 65rem;
   flex-direction: column;
@@ -87,7 +91,7 @@ button {
   margin-top: 4%;
   color: #24637c;
   text-align: center;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgba(0, 0, 0, 0.993) 0px 5px 55px;
   font-size: 10px;
 }
 
